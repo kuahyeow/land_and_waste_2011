@@ -1,4 +1,6 @@
 Recycle::Application.routes.draw do
+  root :to => "information#index"
+
   resources :councils, :only => [:index, :show]
 
   # The priority is based upon order of creation:

@@ -1,0 +1,8 @@
+<h1>Recycling</h1>
+
+<p>Welcome to 2011</p>
+
+<p>Please select your council:</p>
+<p>
+  <%= select_tag :council, options_from_collection_for_select(Council.order(:name), :id, :name), :id => 'council_selector' %>
+</p>
