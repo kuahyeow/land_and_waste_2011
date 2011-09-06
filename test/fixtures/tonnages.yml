@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  year: MyString
+  tonnes: 1
+  estimate: false
+  region_id: 1
+
+two:
+  year: MyString
+  tonnes: 1
+  estimate: false
+  region_id: 1

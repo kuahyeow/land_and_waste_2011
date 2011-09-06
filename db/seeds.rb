@@ -9,3 +9,33 @@
 FasterCSV.foreach(File.join(RAILS_ROOT, 'db/councils.csv'), :headers => true, :header_converters => :symbol) do |council|
   Council.find_or_create_by_name(:name => council[:name], :website => council[:website])
 end
+
+FasterCSV.foreach(File.join(RAILS_ROOT, 'db/regions.csv'), :headers => true, :header_converters => :symbol) do |region|
+  Region.find_or_create_by_name(:name => region[:name])
+end
+
+Tonnage.where(:year => '1998').delete_all
+FasterCSV.foreach(File.join(RAILS_ROOT, 'db/1998.csv'), :headers => true, :header_converters => :symbol) do |data|
+  region = Region.find_by_name(data[:region])
+  raise "Not found #{data[:region]}" unless region
+  Tonnage.create!(:year => '1998', :tonnes => data[:tonnes], :region => region, :estimate => false)
+end
+
+Tonnage.where(:year => '2001/02').delete_all
+FasterCSV.foreach(File.join(RAILS_ROOT, 'db/2001.csv'), :headers => true, :header_converters => :symbol) do |data|
+  region = Region.find_by_name(data[:location])
+  raise "Not found #{data[:region]}" unless region
+  Tonnage.create!(:year => '2001/02', :tonnes => data[:tonnes], :region => region, :estimate => false)
+end
+
+Tonnage.where(:year => '2010').delete_all
+FasterCSV.foreach(File.join(RAILS_ROOT, 'db/2010.csv'), :headers => true, :header_converters => :symbol) do |data|
+  region = Region.find_by_name(data[:region])
+  raise "Not found '#{data[:region]}'" unless region
+  Tonnage.create!(:year => '2010', :tonnes => data[:tonnes], :region => region, :estimate => false) if data[:tonnes]
+
+  estimate = data[:estimated_total_regional_tyr_based_on_canterbury_167_tperson]
+  Tonnage.create!(:year => '2010', :tonnes => estimate, :region => region, :estimate => true) if estimate
+end
+
+

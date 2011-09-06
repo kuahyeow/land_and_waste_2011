@@ -1,4 +1,6 @@
 Recycle::Application.routes.draw do
+  devise_for :users
+
   root :to => "information#index"
 
   resources :councils, :only => [:index, :show]

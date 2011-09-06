@@ -1,0 +1,13 @@
+/* tell the SVG path to be a thin blue line without any area fill */
+path {
+  stroke: steelblue;
+  stroke-width: 2;
+  fill: none;
+}
+
+td.numeric {
+  text-align: right;
+}
+th.numeric {
+  text-align: right;
+}

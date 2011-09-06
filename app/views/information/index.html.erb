@@ -1,8 +1,59 @@
-<h1>Recycling</h1>
+<h1>Where does your Rubbish go?</h1>
 
-<p>Welcome to 2011</p>
+<p class="alert-message block-message warning">Waste is like golf, the less waste the better</p>
+
+<ul class="tabs">
+  <li><a href="#">Choose a region</a></li>
+  <li class="active"><a href="#">Championship List</a></li>
+  <li><a href="#">Best improvers</a></li>
+</ul>
+<p class="alert-message block-message warning">Insert Graph here</p>
+
+
+<h3>Complete Waste Data</h3>
+<table class="zebra-striped">
+  <thead>
+  <tr>
+    <th>Region</th>
+    <th></th>
+    <th class="numeric">1998</th>
+    <th class="numeric">2001/02</th>
+    <th class="numeric">2010</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @region_tonnage.each do |region, tonnages| %>
+    <tr>
+      <% expected = ['1998', '2001/02', '2010'] %>
+      <td style="width: 200px;"><%= region.name %></td>
+      <td style="width: 200px;">
+        <div id="<%= dom_id(region, 'graph') %>" class="aGraph" style="width:200px; height:20px;"></div>
+      </td>
+      <% tonnages.each do |tonnage| %>
+        <% while (expects = expected.shift) && (expects != tonnage.year) %>
+          <td class="numeric">-</td>
+        <% end %>
+        <td class="numeric"><%= '(E)' if tonnage.estimate %> <%= number_with_delimiter(tonnage.tonnes) || '-' %> <%#= "(#{tonnage.year})" %></td>
+      <% end %>
+      <% expected.each do %>
+        <%= content_tag(:td, '-', :class => 'numeric') %>
+      <% end %>
+      <% if tonnages.size == 3 %>
+        <script>
+          drawSparkLine("<%= dom_id(region, 'graph') %>", <%= tonnages.map(&:tonnes).to_json %>);
+        </script>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h1>What can you do to help?</h1>
+
+<h2>Recycle<h2>
 
 <p>Please select your council:</p>
 <p>
   <%= select_tag :council, options_from_collection_for_select(Council.order(:name), :id, :name), :id => 'council_selector' %>
 </p>
+
