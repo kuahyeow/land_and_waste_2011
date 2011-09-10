@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="http://github.com/mbostock/d3/raw/v1.2.1/d3.min.js"></script>
+    <script type="text/javascript" src="http://github.com/mbostock/d3/raw/v1.2.1/d3.geo.min.js"></script>
+    <script type="text/javascript" src="http://github.com/mbostock/d3/raw/v1.2.1/d3.geom.min.js"></script>
+    <style type="text/css">
+
+svg {
+  width: 960px;
+  height: 500px;
+}
+
+.black path {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 3px;
+}
+
+.white path {
+  fill: #fff;
+  stroke: #fff;
+}
+
+.grey path {
+  fill: #ccc;
+  stroke: #666;
+}
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+var data; // loaded asynchronously
+
+var svg = d3.select("body")
+  .append("svg:svg");
+
+// A better name would be us-states.json…
+d3.json("nz_regions.json", function(json) {
+  var xy = d3.geo.mercator();
+  xy.scale(7500);
+  xy.translate([-3200, -700])
+  console.log(xy.translate());
+  var path = d3.geo.path().projection(xy);
+
+  // Synthesize a random data variable to visualize…
+  // Note: This has a baked-in sqrt transform!
+  json.features.forEach(function(f) {
+    f.properties.value = Math.sqrt(.2 + .8 * Math.random());
+    f.properties.value = 1.0;
+  });
+  // A thick black stroke for the exterior.
+  svg.append("svg:g")
+      .attr("class", "black")
+    .selectAll("path")
+      .data(json.features)
+    .enter().append("svg:path")
+      .attr("d", path);
+
+  // A white overlay to hide interior black strokes.
+  svg.append("svg:g")
+      .attr("class", "white")
+    .selectAll("path")
+      .data(json.features)
+    .enter().append("svg:path")
+      .attr("d", path);
+
+  // The polygons, scaled!
+  svg.append("svg:g")
+      .attr("class", "grey")
+    .selectAll("path")
+      .data(json.features)
+    .enter().append("svg:path")
+      .attr("transform", function(d) {
+        var centroid = path.centroid(d),
+            x = centroid[0],
+            y = centroid[1];
+        return "translate(" + x + "," + y + ")"
+            + "scale(" + d.properties.value + ")"
+            + "translate(" + -x + "," + -y + ")";
+      })
+      .attr("stroke-width", function(d) { return 1 / d.properties.value; })
+      .attr("d", path);
+
+});
+
+    </script>
+  </body>
+</html>
