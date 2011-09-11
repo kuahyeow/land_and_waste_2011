@@ -23,7 +23,7 @@ function drawSparkLine(id, data) {
   var graph = d3.select("#" + id).append("svg:svg").attr("width", "100%").attr("height", "100%");
 
   // X scale will fit values to match pixels (we assume 200x30 graph)
-  var x = d3.scale.linear().domain([0, data.length]).range([0, 200]);
+  var x = d3.scale.linear().domain([0, data.length-1]).range([0, 50]);
   // Y scale will fit values to match pixels (we assume 200x30 graph)
   var y = d3.scale.linear().domain([0, d3.max(data)]).range([20, 0]);
 

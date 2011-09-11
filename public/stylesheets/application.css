@@ -5,9 +5,36 @@ path {
   fill: none;
 }
 
+.layer path {
+  stroke: #fff;
+  stroke-width: 1.5px;
+  vector-effect: non-scaling-stroke;
+}
+
 td.numeric {
   text-align: right;
 }
+td.estimate {
+  font-style: italic;
+}
 th.numeric {
   text-align: right;
+}
+
+td.name_and_sparkline {
+  min-width: 160px;
+}
+
+td.name_and_sparkline .region_short_name {
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow:hidden;
+  width: 100px;
+  margin-right: 5px;
+}
+
+td .aGraph {
+  width: 50px;
+  height: 20px;
+  display: inline-block;
 }

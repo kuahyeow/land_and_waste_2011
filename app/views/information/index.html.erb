@@ -1,12 +1,59 @@
 <h1>Where does your Rubbish go?</h1>
 
+<h3>Landfill tonnage by region and year</h3>
+<div class="row">
+  <div class="span8 columns">
+    <div id="map" style="height: 600px;"></div>
+  </div>
+  <div class="span8 columns">
+    <p>
+      This table shows the amount of waste sent to landfills within that region for the given year.
+      <em>italic</em> figures denote estimates
+    </p>
+    <table class="zebra-striped">
+      <thead>
+      <tr>
+        <th>Region</th>
+        <th class="numeric">1998 (Tonnes)</th>
+        <th class="numeric">2001/02 (Tonnes)</th>
+        <th class="numeric">2010 (Tonnes)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @region_tonnage.each do |region, tonnages| %>
+        <tr>
+          <% expected = ['1998', '2001/02', '2010'] %>
+          <td class="name_and_sparkline">
+            <div class="region_short_name" title="<%= region.name %>"><%= region.name %></div>
+            <div id="<%= dom_id(region, 'graph') %>" class="aGraph"></div>
+          </td>
+          <% tonnages.each do |tonnage| %>
+            <% while (expects = expected.shift) && (expects != tonnage.year) %>
+              <td class="numeric">-</td>
+            <% end %>
+            <td class="numeric <%= 'estimate' if tonnage.estimate %>"> <%= number_with_delimiter(tonnage.tonnes) || '-' %> <%#= "(#{tonnage.year})" %></td>
+          <% end %>
+          <% expected.each do %>
+            <%= content_tag(:td, '-', :class => 'numeric') %>
+          <% end %>
+          <% if tonnages.size == 3 %>
+            <script>
+              drawSparkLine("<%= dom_id(region, 'graph') %>", <%= tonnages.map(&:tonnes).to_json %>);
+            </script>
+          <% end %>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <h3>Tonnes of waste per person</h3>
 <p>This table shows the amount of waste per capita sent to landfills within that region for the given year</p>
 <table class="zebra-striped">
   <thead>
   <tr>
     <th>Region</th>
-    <th></th>
     <th class="numeric">1998 (Tonnes)</th>
     <th class="numeric">2001/02 (Tonnes)</th>
     <th class="numeric">2010 (Tonnes)</th>
@@ -16,9 +63,9 @@
   <% @region_tonnage.each do |region, tonnages| %>
     <tr>
       <% expected = ['1998', '2001/02', '2010'] %>
-      <td style="width: 200px;"><%= region.name %></td>
-      <td style="width: 200px;">
-        <div id="<%= dom_id(region, 'graph_per') %>" class="aGraph" style="width:200px; height:20px;"></div>
+      <td class="name_and_sparkline">
+        <div class="region_short_name" title="<%= region.name %>"><%= region.name %></div>
+        <div id="<%= dom_id(region, 'graph_per') %>" class="aGraph"></div>
       </td>
       <% tonnages.each do |tonnage| %>
         <% while (expects = expected.shift) && (expects != tonnage.year) %>
@@ -40,44 +87,8 @@
 </table>
 
 
-<h3>Raw Tonnage Data by Region and Year</h3>
-<p>This table shows the amount of waste sent to landfills within that region for the given year</p>
-<table class="zebra-striped">
-  <thead>
-  <tr>
-    <th>Region</th>
-    <th></th>
-    <th class="numeric">1998 (Tonnes)</th>
-    <th class="numeric">2001/02 (Tonnes)</th>
-    <th class="numeric">2010 (Tonnes)</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @region_tonnage.each do |region, tonnages| %>
-    <tr>
-      <% expected = ['1998', '2001/02', '2010'] %>
-      <td style="width: 200px;"><%= region.name %></td>
-      <td style="width: 200px;">
-        <div id="<%= dom_id(region, 'graph') %>" class="aGraph" style="width:200px; height:20px;"></div>
-      </td>
-      <% tonnages.each do |tonnage| %>
-        <% while (expects = expected.shift) && (expects != tonnage.year) %>
-          <td class="numeric">-</td>
-        <% end %>
-        <td class="numeric"><%= '(E)' if tonnage.estimate %> <%= number_with_delimiter(tonnage.tonnes) || '-' %> <%#= "(#{tonnage.year})" %></td>
-      <% end %>
-      <% expected.each do %>
-        <%= content_tag(:td, '-', :class => 'numeric') %>
-      <% end %>
-      <% if tonnages.size == 3 %>
-        <script>
-          drawSparkLine("<%= dom_id(region, 'graph') %>", <%= tonnages.map(&:tonnes).to_json %>);
-        </script>
-      <% end %>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<%= javascript_include_tag :defaults, 'fips.js', 'statehood.js' %>
+
 
 <h1>What can you do to help?</h1>
 
