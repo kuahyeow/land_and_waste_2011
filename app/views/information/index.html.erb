@@ -48,7 +48,7 @@
   </div>
 </div>
 
-<h3>Tonnes of waste per person</h3>
+<h3>Annual Landfill tonnage per person</h3>
 <p>This table shows the amount of waste per capita sent to landfills within that region for the given year</p>
 <table class="zebra-striped">
   <thead>
@@ -89,14 +89,3 @@
 
 
 <%= javascript_include_tag :defaults, 'fips.js', 'statehood.js' %>
-
-
-<h1>What can you do to help?</h1>
-
-<h2>Recycle<h2>
-
-<p>Please select your council:</p>
-<p>
-  <%= select_tag :council, options_from_collection_for_select(Council.order(:name), :id, :name), :id => 'council_selector' %>
-</p>
-
