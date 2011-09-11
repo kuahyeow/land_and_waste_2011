@@ -54,9 +54,9 @@
   <thead>
   <tr>
     <th>Region</th>
-    <th class="numeric">1998 (Tonnes)</th>
-    <th class="numeric">2001/02 (Tonnes)</th>
-    <th class="numeric">2010 (Tonnes)</th>
+    <th class="numeric">1998 (kg)</th>
+    <th class="numeric">2001/02 (kg)</th>
+    <th class="numeric">2010 (kg)</th>
   </tr>
   </thead>
   <tbody>
@@ -71,7 +71,8 @@
         <% while (expects = expected.shift) && (expects != tonnage.year) %>
           <td class="numeric">-</td>
         <% end %>
-        <td class="numeric"><%= '(E)' if tonnage.estimate %> <%= number_with_precision(tonnage.per_capita, :precision => 4) || '-' %> <%#= "(#{tonnage.year})" %></td>
+        <td class="numeric <%= 'estimate' if tonnage.estimate %>">
+          <%= number_with_precision(tonnage.per_capita.try(:*, 1000), :precision => 2) || '-' %></td>
       <% end %>
       <% expected.each do %>
         <%= content_tag(:td, '-', :class => 'numeric') %>
