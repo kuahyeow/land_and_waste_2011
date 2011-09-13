@@ -10,17 +10,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110907003202) do
+ActiveRecord::Schema.define(:version => 20110913104041) do
 
   create_table "councils", :force => true do |t|
     t.string   "name"
     t.text     "website"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "region_id"
+    t.string   "council_type"
   end
 
   create_table "landfills", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lands", :force => true do |t|
+    t.integer  "region_id"
+    t.string   "year"
+    t.string   "land_type"
+    t.decimal  "hectares"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

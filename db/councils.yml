@@ -1,0 +1,548 @@
+--- 
+- name: Ashburton District Council
+  created_at: 2011-09-01 09:22:11.076489 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.076489 Z
+  id: 88
+  region_id: 
+  website: http://www.ashburtondc.govt.nz
+- name: Auckland Council
+  created_at: 2011-09-01 09:22:11.244587 Z
+  council_type: unitary
+  updated_at: 2011-09-12 12:27:08.607247 Z
+  id: 135
+  region_id: 2
+  website: http://www.aucklandcouncil.govt.nz
+- name: Bay of Plenty Regional Council
+  created_at: 2011-09-12 12:13:09.656224 Z
+  council_type: regional
+  updated_at: 2011-09-12 12:25:34.786539 Z
+  id: 141
+  region_id: 3
+  website: http://www.boprc.govt.nz/
+- name: Buller District Council
+  created_at: 2011-09-01 09:22:11.067683 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.067683 Z
+  id: 85
+  region_id: 
+  website: http://www.bullerdc.govt.nz
+- name: Canterbury Regional Council
+  created_at: 2011-09-12 12:13:09.667905 Z
+  council_type: regional
+  updated_at: 2011-09-12 12:24:02.160135 Z
+  id: 145
+  region_id: 4
+  website: http://www.ecan.govt.nz/
+- name: Carterton District Council
+  created_at: 2011-09-01 09:22:11.070482 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.070482 Z
+  id: 86
+  region_id: 
+  website: http://www.cartertondc.co.nz/
+- name: Central Hawke's Bay District Council
+  created_at: 2011-09-01 09:22:11.073751 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.073751 Z
+  id: 87
+  region_id: 
+  website: http://www.chbdc.govt.nz/
+- name: Central Otago District Council
+  created_at: 2011-09-01 09:22:11.056000 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.056000 Z
+  id: 81
+  region_id: 
+  website: http://www.codc.govt.nz
+- name: Chatham Islands Council
+  created_at: 2011-09-01 09:22:11.241501 Z
+  council_type: 
+  updated_at: 2011-09-12 12:27:30.608521 Z
+  id: 134
+  region_id: 21
+  website: http://www.cic.govt.nz
+- name: Christchurch City Council
+  created_at: 2011-09-01 09:22:11.045051 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.045051 Z
+  id: 77
+  region_id: 
+  website: http://www.ccc.govt.nz/
+- name: Clutha District Council
+  created_at: 2011-09-01 09:22:11.189792 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.189792 Z
+  id: 129
+  region_id: 
+  website: http://www.cluthadc.govt.nz
+- name: Dunedin City Council
+  created_at: 2011-09-01 09:22:11.047731 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.047731 Z
+  id: 78
+  region_id: 
+  website: http://www.dunedin.govt.nz/
+- name: Far North District Council
+  created_at: 2011-09-01 09:22:11.198621 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.198621 Z
+  id: 132
+  region_id: 
+  website: http://www.fndc.govt.nz/
+- name: Gisborne District Council
+  created_at: 2011-09-01 09:22:11.192965 Z
+  council_type: unitary
+  updated_at: 2011-09-12 12:28:28.768936 Z
+  id: 130
+  region_id: 5
+  website: http://www.gdc.govt.nz
+- name: Gore District Council
+  created_at: 2011-09-01 09:22:11.181694 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.181694 Z
+  id: 126
+  region_id: 
+  website: http://www.goredc.govt.nz
+- name: Grey District Council
+  created_at: 2011-09-01 09:22:11.184390 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.184390 Z
+  id: 127
+  region_id: 
+  website: http://www.greydc.govt.nz
+- name: Hamilton City Council
+  created_at: 2011-09-01 09:22:11.050312 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.050312 Z
+  id: 79
+  region_id: 
+  website: http://www.hamilton.co.nz/
+- name: Hastings District Council
+  created_at: 2011-09-01 09:22:11.187045 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.187045 Z
+  id: 128
+  region_id: 
+  website: http://www.hastingsdc.govt.nz/
+- name: Hauraki District Council
+  created_at: 2011-09-01 09:22:11.082358 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.082358 Z
+  id: 90
+  region_id: 
+  website: http://www.hauraki-dc.govt.nz
+- name: Hawke's Bay Regional Council
+  created_at: 2011-09-12 12:13:09.707716 Z
+  council_type: regional
+  updated_at: 2011-09-12 12:23:37.293991 Z
+  id: 146
+  region_id: 6
+  website: http://www.hbrc.govt.nz
+- name: Horowhenua District Council
+  created_at: 2011-09-01 09:22:11.062034 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.062034 Z
+  id: 83
+  region_id: 
+  website: http://www.horowhenua.govt.nz
+- name: Hurunui District Council
+  created_at: 2011-09-01 09:22:11.064667 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.064667 Z
+  id: 84
+  region_id: 
+  website: http://www.hurunui.govt.nz/
+- name: Hutt City Council
+  created_at: 2011-09-01 09:22:11.016620 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.016620 Z
+  id: 69
+  region_id: 
+  website: http://www.huttcity.govt.nz/
+- name: Invercargill City Council
+  created_at: 2011-09-01 09:22:11.025144 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.025144 Z
+  id: 70
+  region_id: 
+  website: http://www.icc.govt.nz/
+- name: Kaikoura District Council
+  created_at: 2011-09-01 09:22:11.058766 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.058766 Z
+  id: 82
+  region_id: 
+  website: http://www.kaikoura.govt.nz
+- name: Kaipara District Council
+  created_at: 2011-09-01 09:22:11.084943 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.084943 Z
+  id: 91
+  region_id: 
+  website: http://www.kaipara.govt.nz/
+- name: Kapiti Coast District Council
+  created_at: 2011-09-01 09:22:11.079580 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.079580 Z
+  id: 89
+  region_id: 
+  website: http://www.kapiticoast.govt.nz/
+- name: Kawerau District Council
+  created_at: 2011-09-01 09:22:11.087522 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.087522 Z
+  id: 92
+  region_id: 
+  website: http://www.kaweraudc.govt.nz
+- name: MacKenzie District Council
+  created_at: 2011-09-01 09:22:11.195775 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.195775 Z
+  id: 131
+  region_id: 
+  website: http://www.mackenzie.govt.nz
+- name: Manawatu District Council
+  created_at: 2011-09-01 09:22:11.090120 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.090120 Z
+  id: 93
+  region_id: 
+  website: http://www.mdc.govt.nz/
+- name: Manawatu-Wanganui Regional Council
+  created_at: 2011-09-12 12:13:09.659078 Z
+  council_type: regional
+  updated_at: 2011-09-12 12:25:23.806355 Z
+  id: 142
+  region_id: 7
+  website: http://www.horizons.govt.nz
+- name: Marlborough District Council
+  created_at: 2011-09-01 09:22:11.092872 Z
+  council_type: unitary
+  updated_at: 2011-09-12 12:29:38.245507 Z
+  id: 94
+  region_id: 8
+  website: http://www.marlborough.govt.nz
+- name: Masterton District Council
+  created_at: 2011-09-01 09:22:11.095641 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.095641 Z
+  id: 95
+  region_id: 
+  website: http://www.mstn.govt.nz
+- name: Matamata-Piako District Council
+  created_at: 2011-09-01 09:22:11.098327 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.098327 Z
+  id: 96
+  region_id: 
+  website: http://www.mpdc.govt.nz/
+- name: Napier City Council
+  created_at: 2011-09-01 09:22:11.027820 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.027820 Z
+  id: 71
+  region_id: 
+  website: http://www.napier.govt.nz
+- name: Nelson City Council
+  created_at: 2011-09-01 09:22:11.030410 Z
+  council_type: unitary
+  updated_at: 2011-09-12 12:28:51.399464 Z
+  id: 72
+  region_id: 9
+  website: http://www.nelsoncitycouncil.co.nz
+- name: New Plymouth District Council
+  created_at: 2011-09-01 09:22:11.101014 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.101014 Z
+  id: 97
+  region_id: 
+  website: http://www.newplymouthnz.com
+- name: Northland Regional Council
+  created_at: 2011-09-12 12:13:09.598381 Z
+  council_type: regional
+  updated_at: 2011-09-12 12:27:00.653482 Z
+  id: 136
+  region_id: 10
+  website: http://www.nrc.govt.nz
+- name: Opotiki District Council
+  created_at: 2011-09-01 09:22:11.106881 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.106881 Z
+  id: 99
+  region_id: 
+  website: http://www.odc.govt.nz
+- name: Otago Regional Council
+  created_at: 2011-09-12 12:13:09.609175 Z
+  council_type: regional
+  updated_at: 2011-09-12 12:26:47.574652 Z
+  id: 137
+  region_id: 11
+  website: http://www.orc.govt.nz/
+- name: Otorohanga District Council
+  created_at: 2011-09-01 09:22:11.109524 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.109524 Z
+  id: 100
+  region_id: 
+  website: http://www.otodc.govt.nz
+- name: Palmerston North City Council
+  created_at: 2011-09-01 09:22:11.036240 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.036240 Z
+  id: 74
+  region_id: 
+  website: http://www.pncc.govt.nz
+- name: Porirua City Council
+  created_at: 2011-09-01 09:22:11.033497 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.033497 Z
+  id: 73
+  region_id: 
+  website: http://www.pcc.govt.nz/
+- name: Queenstown-Lakes District Council
+  created_at: 2011-09-01 09:22:11.120387 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.120387 Z
+  id: 104
+  region_id: 
+  website: http://www.qldc.govt.nz
+- name: Rangitikei District Council
+  created_at: 2011-09-01 09:22:11.112116 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.112116 Z
+  id: 101
+  region_id: 
+  website: http://www.rangitikei.govt.nz
+- name: Rotorua District Council
+  created_at: 2011-09-01 09:22:11.123173 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.123173 Z
+  id: 105
+  region_id: 
+  website: http://www.rdc.govt.nz/
+- name: Ruapehu District Council
+  created_at: 2011-09-01 09:22:11.115010 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.115010 Z
+  id: 102
+  region_id: 
+  website: http://www.ruapehudc.govt.nz
+- name: Selwyn District Council
+  created_at: 2011-09-01 09:22:11.117769 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.117769 Z
+  id: 103
+  region_id: 
+  website: http://www.selwyn.govt.nz/
+- name: South Taranaki District Council
+  created_at: 2011-09-01 09:22:11.126210 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.126210 Z
+  id: 106
+  region_id: 
+  website: http://www.southtaranaki.com/
+- name: South Waikato District Council
+  created_at: 2011-09-01 09:22:11.129085 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.129085 Z
+  id: 107
+  region_id: 
+  website: http://www.southwaikato.govt.nz
+- name: South Wairarapa District Council
+  created_at: 2011-09-01 09:22:11.137667 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.137667 Z
+  id: 110
+  region_id: 
+  website: http://www.swdc.govt.nz/
+- name: Southland District Council
+  created_at: 2011-09-01 09:22:11.131935 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.131935 Z
+  id: 108
+  region_id: 
+  website: http://www.southlanddc.govt.nz
+- name: Southland Regional Council
+  created_at: 2011-09-12 12:13:09.661735 Z
+  council_type: regional
+  updated_at: 2011-09-12 12:25:09.585458 Z
+  id: 143
+  region_id: 12
+  website: http://www.es.govt.nz
+- name: Stratford District Council
+  created_at: 2011-09-01 09:22:11.134628 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.134628 Z
+  id: 109
+  region_id: 
+  website: http://www.stratford.govt.nz
+- name: Taranaki Regional Council
+  created_at: 2011-09-12 12:13:09.612091 Z
+  council_type: regional
+  updated_at: 2011-09-12 12:26:29.633001 Z
+  id: 138
+  region_id: 13
+  website: http://www.trc.govt.nz
+- name: Tararua District Council
+  created_at: 2011-09-01 09:22:11.104118 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.104118 Z
+  id: 98
+  region_id: 
+  website: http://www.tararuadc.govt.nz
+- name: Tasman District Council
+  created_at: 2011-09-01 09:22:11.140347 Z
+  council_type: unitary
+  updated_at: 2011-09-12 12:28:16.978753 Z
+  id: 111
+  region_id: 14
+  website: http://www.tasman.govt.nz/
+- name: Taupo District Council
+  created_at: 2011-09-01 09:22:11.143020 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.143020 Z
+  id: 112
+  region_id: 
+  website: http://www.taupo.govt.nz/
+- name: Tauranga City Council
+  created_at: 2011-09-01 09:22:11.052914 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.052914 Z
+  id: 80
+  region_id: 
+  website: http://www.tauranga.govt.nz/
+- name: Thames-Coromandel District Council
+  created_at: 2011-09-01 09:22:11.145720 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.145720 Z
+  id: 113
+  region_id: 
+  website: http://www.tcdc.govt.nz
+- name: Timaru District Council
+  created_at: 2011-09-01 09:22:11.148511 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.148511 Z
+  id: 114
+  region_id: 
+  website: http://www.timaru.govt.nz
+- name: Upper Hutt City Council
+  created_at: 2011-09-01 09:22:11.039477 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.039477 Z
+  id: 75
+  region_id: 
+  website: http://www.upperhuttcity.com
+- name: Waikato District Council
+  created_at: 2011-09-01 09:22:11.151233 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.151233 Z
+  id: 115
+  region_id: 
+  website: http://www.waikatodistrict.govt.nz
+- name: Waikato Regional Council
+  created_at: 2011-09-12 12:13:09.664991 Z
+  council_type: regional
+  updated_at: 2011-09-12 12:24:55.069423 Z
+  id: 144
+  region_id: 15
+  website: http://www.waikatoregion.govt.nz/
+- name: Waimakariri District Council
+  created_at: 2011-09-01 09:22:11.154019 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.154019 Z
+  id: 116
+  region_id: 
+  website: http://www.waimakariri.govt.nz
+- name: Waimate District Council
+  created_at: 2011-09-01 09:22:11.156682 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.156682 Z
+  id: 117
+  region_id: 
+  website: http://www.waimatedc.govt.nz
+- name: Waipa District Council
+  created_at: 2011-09-01 09:22:11.159586 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.159586 Z
+  id: 118
+  region_id: 
+  website: http://www.waipadc.govt.nz
+- name: Wairoa District Council
+  created_at: 2011-09-01 09:22:11.162337 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.162337 Z
+  id: 119
+  region_id: 
+  website: http://www.wairoadc.govt.nz/
+- name: Waitaki District Council
+  created_at: 2011-09-01 09:22:11.164995 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.164995 Z
+  id: 120
+  region_id: 
+  website: http://www.waitaki.govt.nz
+- name: Waitomo District Council
+  created_at: 2011-09-01 09:22:11.167684 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.167684 Z
+  id: 121
+  region_id: 
+  website: http://www.waitomo.govt.nz/
+- name: Wanganui District Council
+  created_at: 2011-09-01 09:22:11.170746 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.170746 Z
+  id: 122
+  region_id: 
+  website: http://www.wanganui.govt.nz/
+- name: Wellington City Council
+  created_at: 2011-09-01 09:22:11.042222 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.042222 Z
+  id: 76
+  region_id: 
+  website: http://www.Wellington.govt.nz/
+- name: Wellington Regional Council
+  created_at: 2011-09-12 12:13:09.614745 Z
+  council_type: regional
+  updated_at: 2011-09-12 12:26:01.953819 Z
+  id: 139
+  region_id: 16
+  website: http://www.gw.govt.nz
+- name: West Coast Regional Council
+  created_at: 2011-09-12 12:13:09.653560 Z
+  council_type: regional
+  updated_at: 2011-09-12 12:25:52.320631 Z
+  id: 140
+  region_id: 17
+  website: http://www.wcrc.govt.nz
+- name: Western Bay of Plenty District Council
+  created_at: 2011-09-01 09:22:11.201340 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.201340 Z
+  id: 133
+  region_id: 
+  website: http://www.westernbay.govt.nz/
+- name: Westland District Council
+  created_at: 2011-09-01 09:22:11.173497 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.173497 Z
+  id: 123
+  region_id: 
+  website: http://www.westlanddc.govt.nz
+- name: Whakatane District Council
+  created_at: 2011-09-01 09:22:11.176107 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.176107 Z
+  id: 124
+  region_id: 
+  website: http://www.whakatane.govt.nz/
+- name: Whangarei District Council
+  created_at: 2011-09-01 09:22:11.178807 Z
+  council_type: 
+  updated_at: 2011-09-01 09:22:11.178807 Z
+  id: 125
+  region_id: 
+  website: http://www.wdc.govt.nz
+

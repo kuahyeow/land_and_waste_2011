@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  region_id: 1
+  year: MyString
+  land_type: MyString
+  hectares: 9.99
+
+two:
+  region_id: 1
+  year: MyString
+  land_type: MyString
+  hectares: 9.99

@@ -40,10 +40,14 @@ function load(e) {
     if (d == undefined) {
       feature.element.setAttribute("display", "none");
     } else {
-      feature.element.setAttribute("class", "q" + quantile(d) + "-" + 9);
+      feature.element.setAttribute("class", "feature q" + quantile(d) + "-" + 9);
       feature.element.appendChild(po.svg("title").appendChild(
           document.createTextNode(feature.data.properties.name + ": " + d))
           .parentNode);
+      feature.element.addEventListener("click", function(me){
+        d3.selectAll('.feature').classed('active', false);
+        d3.select(me.target).classed("active", true);
+      }, true);
     }
   }
 }

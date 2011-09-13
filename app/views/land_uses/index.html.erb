@@ -1,0 +1,38 @@
+<p>
+  This table shows the land area for each land use type in each region. It shows the changes from 1990 to 2008.
+</p>
+
+<p>
+  Restrict to "All regions" | Restrict to "Forests"
+</p>
+
+<table class="zebra-striped">
+  <thead>
+  <tr>
+    <th>Region</th>
+    <th class="numeric">1990 (hectares)</th>
+    <th class="numeric">2008 (hectares)</th>
+    <th class="numeric">Difference</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @lands.each do |previous_land, land| %>
+    <tr>
+      <td class="">
+        <div class="region_short_name" title="<%= land.region.name %>">
+          <%= land.region.name %> - <%= land.land_type %>
+        </div>
+      </td>
+      <td class="numeric">
+        <%= number_with_precision(previous_land.hectares, :precision => 0) if previous_land %>
+      </td>
+      <td class="numeric">
+        <%= number_with_precision(land.hectares, :precision => 0) if land %>
+      </td>
+      <td class="numeric">
+        <%= number_with_precision(land.hectares - previous_land.hectares, :precision => 0) if previous_land %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

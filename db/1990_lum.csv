@@ -1,0 +1,177 @@
+lum_reg_n,lum_year,luc_name,sum
+Auckland,1990,Grassland - High producing,207787.00219431073
+Auckland,1990,Natural Forest,145364.97412656484
+Auckland,1990,Settlements,49730.01131741323
+Auckland,1990,Planted Forest - Pre-1990,43771.22250466931
+Auckland,1990,Grassland - Low producing,27512.68225046350
+Auckland,1990,Grassland - With woody biomass,11369.77808928965
+Auckland,1990,Cropland - Annual,6407.24780791118
+Auckland,1990,Other,3668.84309829028
+Auckland,1990,Cropland - Perennial,2946.27500489426
+Auckland,1990,Wetland - Open water,2295.93350743807
+Auckland,1990,Wetland - Vegetated non forest,1525.67499011471
+Bay of Plenty,1990,Natural Forest,578608.88811054506
+Bay of Plenty,1990,Planted Forest - Pre-1990,267999.46692159944
+Bay of Plenty,1990,Grassland - High producing,171633.53522133326
+Bay of Plenty,1990,Grassland - Low producing,102720.75174870707
+Bay of Plenty,1990,Grassland - With woody biomass,37376.91177673584
+Bay of Plenty,1990,Wetland - Open water,24849.12863286000
+Bay of Plenty,1990,Cropland - Perennial,17605.93222369974
+Bay of Plenty,1990,Settlements,13923.42373138318
+Bay of Plenty,1990,Cropland - Annual,7805.95970977399
+Bay of Plenty,1990,Other,2909.61325422467
+Bay of Plenty,1990,Wetland - Vegetated non forest,2494.37040684518
+Canterbury,1990,Grassland - Low producing,2017137.45414205227
+Canterbury,1990,Grassland - High producing,971547.16882994727
+Canterbury,1990,Natural Forest,441751.59312505584
+Canterbury,1990,Other,416906.09834326747
+Canterbury,1990,Grassland - With woody biomass,250105.59138095226
+Canterbury,1990,Cropland - Annual,242228.26115614864
+Canterbury,1990,Wetland - Open water,130609.49429509892
+Canterbury,1990,Planted Forest - Pre-1990,100124.09088171365
+Canterbury,1990,Settlements,29891.49994502915
+Canterbury,1990,Wetland - Vegetated non forest,16846.52619787079
+Canterbury,1990,Cropland - Perennial,4839.58223922224
+Gisborne,1990,Grassland - Low producing,380181.23956573648
+Gisborne,1990,Natural Forest,235538.09571179849
+Gisborne,1990,Planted Forest - Pre-1990,83430.43215883495
+Gisborne,1990,Grassland - High producing,80319.38870924304
+Gisborne,1990,Grassland - With woody biomass,36597.15203017285
+Gisborne,1990,Cropland - Annual,6780.62190845171
+Gisborne,1990,Other,5370.74805088961
+Gisborne,1990,Cropland - Perennial,5048.70739784381
+Gisborne,1990,Settlements,2722.73388612124
+Gisborne,1990,Wetland - Open water,2582.68912771497
+Gisborne,1990,Wetland - Vegetated non forest,637.14681573155
+Hawkes Bay,1990,Grassland - High producing,468497.05138231172
+Hawkes Bay,1990,Natural Forest,419979.26682986265
+Hawkes Bay,1990,Grassland - Low producing,329729.32497613478
+Hawkes Bay,1990,Planted Forest - Pre-1990,98028.30719562512
+Hawkes Bay,1990,Grassland - With woody biomass,50443.78801740957
+Hawkes Bay,1990,Cropland - Perennial,17057.20344500257
+Hawkes Bay,1990,Wetland - Open water,12902.91763682454
+Hawkes Bay,1990,Cropland - Annual,10180.34537727366
+Hawkes Bay,1990,Settlements,7402.96026246378
+Hawkes Bay,1990,Other,3425.44721080790
+Hawkes Bay,1990,Wetland - Vegetated non forest,2579.42887195345
+Manawatu-Wanganui,1990,Grassland - Low producing,817259.84497056539
+Manawatu-Wanganui,1990,Natural Forest,604553.21250886763
+Manawatu-Wanganui,1990,Grassland - High producing,555863.79824560197
+Manawatu-Wanganui,1990,Grassland - With woody biomass,110332.63068763699
+Manawatu-Wanganui,1990,Planted Forest - Pre-1990,76667.85144725125
+Manawatu-Wanganui,1990,Cropland - Annual,14258.25909052463
+Manawatu-Wanganui,1990,Other,13957.59728810164
+Manawatu-Wanganui,1990,Settlements,13736.47024158441
+Manawatu-Wanganui,1990,Wetland - Open water,9833.77816363643
+Manawatu-Wanganui,1990,Wetland - Vegetated non forest,5261.79116212941
+Manawatu-Wanganui,1990,Cropland - Perennial,729.60917614680
+Marlborough,1990,Grassland - Low producing,475134.48765716091
+Marlborough,1990,Natural Forest,331242.25394449335
+Marlborough,1990,Grassland - High producing,74447.65644822004
+Marlborough,1990,Grassland - With woody biomass,56412.16709375054
+Marlborough,1990,Other,47993.18707650974
+Marlborough,1990,Planted Forest - Pre-1990,44462.59475338059
+Marlborough,1990,Wetland - Open water,6272.26141670917
+Marlborough,1990,Cropland - Perennial,4870.82070800433
+Marlborough,1990,Cropland - Annual,4128.48995212505
+Marlborough,1990,Settlements,2312.55875285137
+Marlborough,1990,Wetland - Vegetated non forest,1803.63484237201
+Nelson,1990,Natural Forest,21615.06416956287
+Nelson,1990,Planted Forest - Pre-1990,9762.26600051574
+Nelson,1990,Grassland - Low producing,4263.14654970705
+Nelson,1990,Grassland - High producing,2463.27358855244
+Nelson,1990,Settlements,2327.24781911864
+Nelson,1990,Grassland - With woody biomass,1499.91587719580
+Nelson,1990,Other,123.58740124963
+Nelson,1990,Wetland - Vegetated non forest,75.89982092937
+Nelson,1990,Cropland - Perennial,50.22804829139
+Nelson,1990,Wetland - Open water,42.85922024843
+Nelson,1990,Cropland - Annual,19.75482707154
+Northland,1990,Grassland - High producing,555301.56050167020
+Northland,1990,Natural Forest,425263.66027231447
+Northland,1990,Planted Forest - Pre-1990,143281.44580530224
+Northland,1990,Grassland - Low producing,54530.34905659543
+Northland,1990,Grassland - With woody biomass,28532.78445341810
+Northland,1990,Other,11615.39689829888
+Northland,1990,Wetland - Vegetated non forest,9691.95293924558
+Northland,1990,Wetland - Open water,7961.39358340847
+Northland,1990,Settlements,7400.62883002506
+Northland,1990,Cropland - Perennial,6460.89846069445
+Northland,1990,Cropland - Annual,2881.78709448286
+Otago,1990,Grassland - Low producing,1863166.56195436825
+Otago,1990,Grassland - High producing,553984.21080146316
+Otago,1990,Natural Forest,261018.34165816985
+Otago,1990,Grassland - With woody biomass,164351.16236373560
+Otago,1990,Other,111179.87528931424
+Otago,1990,Wetland - Open water,94803.67000950670
+Otago,1990,Planted Forest - Pre-1990,94217.20523421890
+Otago,1990,Wetland - Vegetated non forest,16079.87625780909
+Otago,1990,Cropland - Annual,14396.72990554796
+Otago,1990,Settlements,13001.72048922674
+Otago,1990,Cropland - Perennial,5059.92835400911
+Southland,1990,Natural Forest,1321600.15343717511
+Southland,1990,Grassland - Low producing,751213.77278237323
+Southland,1990,Grassland - High producing,689745.81775151153
+Southland,1990,Grassland - With woody biomass,159284.58387409784
+Southland,1990,Wetland - Open water,93663.22617511272
+Southland,1990,Other,86992.56972404626
+Southland,1990,Planted Forest - Pre-1990,45643.36218123531
+Southland,1990,Wetland - Vegetated non forest,32899.05765492887
+Southland,1990,Settlements,7276.31597669715
+Southland,1990,Cropland - Annual,5629.68909301890
+Southland,1990,Cropland - Perennial,26.06561517666
+Taranaki,1990,Natural Forest,290960.88074300750
+Taranaki,1990,Grassland - High producing,267194.03369741641
+Taranaki,1990,Grassland - Low producing,126352.46672328024
+Taranaki,1990,Grassland - With woody biomass,15034.49060805756
+Taranaki,1990,Planted Forest - Pre-1990,13394.65013136532
+Taranaki,1990,Settlements,6711.87266129928
+Taranaki,1990,Wetland - Open water,2736.05805709482
+Taranaki,1990,Cropland - Annual,1404.40560515278
+Taranaki,1990,Other,1077.37436017842
+Taranaki,1990,Wetland - Vegetated non forest,497.56604413136
+Taranaki,1990,Cropland - Perennial,362.46748334390
+Tasman,1990,Natural Forest,608275.30333821235
+Tasman,1990,Grassland - Low producing,129166.36186992611
+Tasman,1990,Planted Forest - Pre-1990,86079.44727509876
+Tasman,1990,Grassland - High producing,67049.13406280961
+Tasman,1990,Grassland - With woody biomass,34429.85654695891
+Tasman,1990,Other,16333.72736997398
+Tasman,1990,Cropland - Perennial,9573.14909557366
+Tasman,1990,Wetland - Open water,8120.76920271856
+Tasman,1990,Wetland - Vegetated non forest,2301.12202661516
+Tasman,1990,Settlements,2187.10279476839
+Tasman,1990,Cropland - Annual,1320.38858471602
+Waikato,1990,Grassland - High producing,948002.01314679287
+Waikato,1990,Natural Forest,634871.94781089485
+Waikato,1990,Grassland - Low producing,363430.56509056905
+Waikato,1990,Planted Forest - Pre-1990,308974.64139186236
+Waikato,1990,Wetland - Open water,83578.28023536601
+Waikato,1990,Grassland - With woody biomass,50325.05278820457
+Waikato,1990,Settlements,22053.94272896526
+Waikato,1990,Other,14063.18816847011
+Waikato,1990,Cropland - Annual,13991.82521360578
+Waikato,1990,Wetland - Vegetated non forest,8390.24392655982
+Waikato,1990,Cropland - Perennial,2320.25455665722
+Wellington,1990,Natural Forest,293684.21838482273
+Wellington,1990,Grassland - Low producing,215761.31400563875
+Wellington,1990,Grassland - High producing,176494.08106677165
+Wellington,1990,Grassland - With woody biomass,46697.01797090474
+Wellington,1990,Planted Forest - Pre-1990,41799.28993602743
+Wellington,1990,Settlements,19679.02625156190
+Wellington,1990,Wetland - Open water,11594.96082232861
+Wellington,1990,Cropland - Annual,2345.48721133932
+Wellington,1990,Other,1813.13490468109
+Wellington,1990,Cropland - Perennial,1716.13828426176
+Wellington,1990,Wetland - Vegetated non forest,1214.61419271995
+West Coast,1990,Natural Forest,1526295.86523771055
+West Coast,1990,Grassland - Low producing,346326.46377111547
+West Coast,1990,Other,161708.26788502317
+West Coast,1990,Grassland - With woody biomass,144066.36396137698
+West Coast,1990,Grassland - High producing,65143.70420561230
+West Coast,1990,Wetland - Open water,39535.35859969931
+West Coast,1990,Planted Forest - Pre-1990,30001.73220238485
+West Coast,1990,Wetland - Vegetated non forest,19825.49349774793
+West Coast,1990,Settlements,2928.48623681122
+West Coast,1990,Cropland - Annual,35.98228973127
+West Coast,1990,Cropland - Perennial,24.47582993133

@@ -1,0 +1,29 @@
+<h1><%= @region.name %></h1>
+
+<% unless @region.populations.empty? %>
+<p>There were <%= number_with_delimiter @region.populations.last.number %> people living in this region at <%= @region.populations.last.year %>.</p>
+<% end %>
+
+<p>
+  There were <%= number_with_delimiter @forests.last.hectares.round.to_i %> hectares of <%= @forests.last.land_type %> in <%= @region.name %> as of <%= @forests.last.year %>.
+  <% if @forests.size > 1 %>
+    <% difference = @forests.last.hectares - @forests.first.hectares %>
+    This is <%= number_with_precision(difference.abs, :precision => 0, :delimiter => ',') %> hectares <%= difference < 0 ? 'less' : 'more' %> compared to <%= @forests.first.year %>
+  <% end %>
+</p>
+
+<p>
+In <%= @region.tonnages.last.year %>, <%= 'an estimated' if @region.tonnages.last.estimate %>
+ <%= number_to_human @region.tonnages.last.tonnes %> tonnes of waste was dumped in landfills in the region.
+</p>
+
+<% if @regional_council %>
+  <p>
+    <%= @region.name %> is administered by the <%= @regional_council.name %>.
+  </p>
+
+  <p>
+    Much, much more wonderful information and data can be found at <%= link_to 'its wikipedia page', 'http://en.wikipedia.org/wiki/' + @region.name + ' Region' %>
+  </p>
+<% end %>
+

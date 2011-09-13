@@ -43,16 +43,38 @@ if reload_tonnages
   end
 end
 
-Population.delete_all
-FasterCSV.foreach(File.join(RAILS_ROOT, 'db/population.csv'), :headers => true, :header_converters => :symbol) do |data|
-  region = Region.find_by_name(data[:region])
-  raise "Not found #{data[:region]}" unless region
-  Population.create!(:year => '1991', :number => data[:'1991_census'], :region => region)
-  Population.create!(:year => '1996', :number => data[:'1996_census'], :region => region)
-  Population.create!(:year => '2001', :number => data[:'2001_census'], :region => region)
-  Population.create!(:year => '2006', :number => data[:'2006_census'], :region => region)
-  Population.create!(:year => '2010', :number => data[:'2010_estimate'], :region => region)
+reload_population = false
+
+if reload_population
+  puts "Reloading population data.."
+  Population.delete_all
+  FasterCSV.foreach(File.join(RAILS_ROOT, 'db/population.csv'), :headers => true, :header_converters => :symbol) do |data|
+    region = Region.find_by_name(data[:region])
+    raise "Not found #{data[:region]}" unless region
+    Population.create!(:year => '1991', :number => data[:'1991_census'], :region => region)
+    Population.create!(:year => '1996', :number => data[:'1996_census'], :region => region)
+    Population.create!(:year => '2001', :number => data[:'2001_census'], :region => region)
+    Population.create!(:year => '2006', :number => data[:'2006_census'], :region => region)
+    Population.create!(:year => '2010', :number => data[:'2010_estimate'], :region => region)
+  end
 end
 
+reload_lands = true
+
+if reload_lands
+  Land.delete_all
+  puts "Reloading land use data.."
+  FasterCSV.foreach(File.join(RAILS_ROOT, 'db/2008_lum.csv'), :headers => true, :header_converters => :symbol) do |data|
+    region = Region.find_by_name(data[:lum_reg_n])
+    raise "Not found #{data[:lum_reg_n]}" unless region
+    Land.create!(:year => data[:lum_year], :land_type => data[:luc_name], :hectares => data[:sum], :region => region)
+  end
+
+  FasterCSV.foreach(File.join(RAILS_ROOT, 'db/1990_lum.csv'), :headers => true, :header_converters => :symbol) do |data|
+    region = Region.find_by_name(data[:lum_reg_n])
+    raise "Not found #{data[:lum_reg_n]}" unless region
+    Land.create!(:year => data[:lum_year], :land_type => data[:luc_name], :hectares => data[:sum], :region => region)
+  end
+end
 
 

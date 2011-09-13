@@ -2,7 +2,9 @@ Recycle::Application.routes.draw do
   devise_for :users
 
   root :to => "information#index"
+  match '/land', :to => 'land_uses#index'
 
+  resources :regions, :only => [:index, :show]
   resources :councils, :only => [:index, :show]
 
   # The priority is based upon order of creation:

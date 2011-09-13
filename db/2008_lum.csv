@@ -1,0 +1,193 @@
+lum_reg_n,lum_year,luc_name,sum
+Auckland,2008,Grassland - High producing,201097.82361113488
+Auckland,2008,Natural Forest,144697.52876746791
+Auckland,2008,Settlements,51023.44108190616
+Auckland,2008,Planted Forest - Pre-1990,43669.64972173244
+Auckland,2008,Grassland - Low producing,24189.22559306530
+Auckland,2008,Post 1989 Forest,11035.96791044180
+Auckland,2008,Grassland - With woody biomass,10015.27972307562
+Auckland,2008,Cropland - Annual,6407.24780791118
+Auckland,2008,Other,3476.19212880877
+Auckland,2008,Cropland - Perennial,2946.27500489426
+Auckland,2008,Wetland - Open water,2295.93350743807
+Auckland,2008,Wetland - Vegetated non forest,1525.08003348337
+Bay of Plenty,2008,Natural Forest,577752.22166224705
+Bay of Plenty,2008,Planted Forest - Pre-1990,266959.80162198095
+Bay of Plenty,2008,Grassland - High producing,168804.59923534798
+Bay of Plenty,2008,Grassland - Low producing,92784.98419010706
+Bay of Plenty,2008,Grassland - With woody biomass,31789.24829112177
+Bay of Plenty,2008,Wetland - Open water,24849.12863286000
+Bay of Plenty,2008,Post 1989 Forest,20212.42454541991
+Bay of Plenty,2008,Cropland - Perennial,17536.90028540774
+Bay of Plenty,2008,Settlements,14088.35329984019
+Bay of Plenty,2008,Cropland - Annual,7805.95970977399
+Bay of Plenty,2008,Other,2849.98985675561
+Bay of Plenty,2008,Wetland - Vegetated non forest,2494.37040684518
+Canterbury,2008,Grassland - Low producing,2002631.21619968213
+Canterbury,2008,Grassland - High producing,966877.07787885060
+Canterbury,2008,Natural Forest,439238.59725657199
+Canterbury,2008,Other,415954.67857277258
+Canterbury,2008,Cropland - Annual,244466.73618142184
+Canterbury,2008,Grassland - With woody biomass,236111.62536593433
+Canterbury,2008,Wetland - Open water,130609.49429509892
+Canterbury,2008,Planted Forest - Pre-1990,95337.05851397917
+Canterbury,2008,Post 1989 Forest,39097.84401377146
+Canterbury,2008,Settlements,29983.36064186605
+Canterbury,2008,Wetland - Vegetated non forest,16846.52619787079
+Canterbury,2008,Cropland - Perennial,4833.14541853864
+Gisborne,2008,Grassland - Low producing,302772.62955240525
+Gisborne,2008,Natural Forest,231821.31391884237
+Gisborne,2008,Post 1989 Forest,93620.35071514180
+Gisborne,2008,Planted Forest - Pre-1990,83244.47323701682
+Gisborne,2008,Grassland - High producing,78922.87982553132
+Gisborne,2008,Grassland - With woody biomass,26733.25880337327
+Gisborne,2008,Cropland - Annual,6780.62190845171
+Gisborne,2008,Cropland - Perennial,5048.70739784381
+Gisborne,2008,Other,4322.15017436459
+Gisborne,2008,Settlements,2722.73388612124
+Gisborne,2008,Wetland - Open water,2582.68912771497
+Gisborne,2008,Wetland - Vegetated non forest,637.14681573155
+Hawkes Bay,2008,Grassland - High producing,442008.85293570683
+Hawkes Bay,2008,Natural Forest,417782.88951336833
+Hawkes Bay,2008,Grassland - Low producing,303477.57379303883
+Hawkes Bay,2008,Planted Forest - Pre-1990,97432.85388858217
+Hawkes Bay,2008,Post 1989 Forest,67231.46559726216
+Hawkes Bay,2008,Grassland - With woody biomass,38992.87447956446
+Hawkes Bay,2008,Cropland - Perennial,17220.71331245987
+Hawkes Bay,2008,Wetland - Open water,12902.91763682454
+Hawkes Bay,2008,Cropland - Annual,10180.34537727366
+Hawkes Bay,2008,Settlements,7402.96026246378
+Hawkes Bay,2008,Other,3013.16553717166
+Hawkes Bay,2008,Wetland - Vegetated non forest,2579.42887195345
+Manawatu-Wanganui,2008,Grassland - Low producing,762469.97234571887
+Manawatu-Wanganui,2008,Natural Forest,599595.66160635998
+Manawatu-Wanganui,2008,Grassland - High producing,550880.00804103850
+Manawatu-Wanganui,2008,Grassland - With woody biomass,104987.39946364698
+Manawatu-Wanganui,2008,Planted Forest - Pre-1990,75387.69264890931
+Manawatu-Wanganui,2008,Post 1989 Forest,71989.58807820994
+Manawatu-Wanganui,2008,Cropland - Annual,14289.58565731390
+Manawatu-Wanganui,2008,Settlements,13776.59316215186
+Manawatu-Wanganui,2008,Other,13319.91099946015
+Manawatu-Wanganui,2008,Wetland - Open water,9812.11839280453
+Manawatu-Wanganui,2008,Wetland - Vegetated non forest,5216.70341028573
+Manawatu-Wanganui,2008,Cropland - Perennial,729.60917614680
+Marlborough,2008,Grassland - Low producing,456647.07512485328
+Marlborough,2008,Natural Forest,329521.95868172321
+Marlborough,2008,Grassland - High producing,70031.81996897839
+Marlborough,2008,Other,47800.16287304671
+Marlborough,2008,Planted Forest - Pre-1990,44045.83834084836
+Marlborough,2008,Grassland - With woody biomass,43030.18803131154
+Marlborough,2008,Post 1989 Forest,34464.72675241298
+Marlborough,2008,Cropland - Perennial,10297.20113634400
+Marlborough,2008,Wetland - Open water,6272.26141670917
+Marlborough,2008,Cropland - Annual,2763.74679637454
+Marlborough,2008,Settlements,2401.49868060291
+Marlborough,2008,Wetland - Vegetated non forest,1803.63484237201
+Nelson,2008,Natural Forest,21435.87109103595
+Nelson,2008,Planted Forest - Pre-1990,9762.26600051574
+Nelson,2008,Grassland - Low producing,3779.32646428467
+Nelson,2008,Grassland - High producing,2400.58692257310
+Nelson,2008,Settlements,2355.59883770243
+Nelson,2008,Post 1989 Forest,1420.19698961607
+Nelson,2008,Grassland - With woody biomass,783.87340125588
+Nelson,2008,Other,120.24442241578
+Nelson,2008,Wetland - Vegetated non forest,75.89982092937
+Nelson,2008,Cropland - Perennial,46.76532479394
+Nelson,2008,Wetland - Open water,42.85922024843
+Nelson,2008,Cropland - Annual,19.75482707154
+Northland,2008,Grassland - High producing,536766.67784553239
+Northland,2008,Natural Forest,418374.87188758200
+Northland,2008,Planted Forest - Pre-1990,142082.79011371834
+Northland,2008,Grassland - Low producing,48704.70206771071
+Northland,2008,Post 1989 Forest,42423.27336407914
+Northland,2008,Grassland - With woody biomass,18668.06520763746
+Northland,2008,Other,11444.65568353605
+Northland,2008,Wetland - Vegetated non forest,9631.84649780141
+Northland,2008,Wetland - Open water,7961.39358340847
+Northland,2008,Settlements,7511.86809094726
+Northland,2008,Cropland - Perennial,6466.62133893938
+Northland,2008,Cropland - Annual,2885.09221456313
+Otago,2008,Grassland - Low producing,1839290.12149351231
+Otago,2008,Grassland - High producing,543116.58147085377
+Otago,2008,Natural Forest,257499.63920852366
+Otago,2008,Grassland - With woody biomass,154256.54913670295
+Otago,2008,Other,110766.39611156673
+Otago,2008,Wetland - Open water,94803.67000950670
+Otago,2008,Planted Forest - Pre-1990,93723.09281349982
+Otago,2008,Post 1989 Forest,49115.82083720582
+Otago,2008,Wetland - Vegetated non forest,16078.03801315193
+Otago,2008,Cropland - Annual,14391.40677108992
+Otago,2008,Settlements,13158.03809774688
+Otago,2008,Cropland - Perennial,5059.92835400911
+Southland,2008,Natural Forest,1315714.11679146820
+Southland,2008,Grassland - Low producing,727090.78667420425
+Southland,2008,Grassland - High producing,683149.44544806246
+Southland,2008,Grassland - With woody biomass,153653.34028413756
+Southland,2008,Wetland - Open water,93663.22617511272
+Southland,2008,Other,86451.58463923662
+Southland,2008,Planted Forest - Pre-1990,45154.83351607563
+Southland,2008,Post 1989 Forest,43252.65207701242
+Southland,2008,Wetland - Vegetated non forest,32899.05765492887
+Southland,2008,Settlements,7289.81629693929
+Southland,2008,Cropland - Annual,5629.68909301890
+Southland,2008,Cropland - Perennial,26.06561517666
+Taranaki,2008,Natural Forest,288302.69742020021
+Taranaki,2008,Grassland - High producing,266675.41940190890
+Taranaki,2008,Grassland - Low producing,115958.97953450310
+Taranaki,2008,Post 1989 Forest,16517.80831985082
+Taranaki,2008,Planted Forest - Pre-1990,13317.23852745428
+Taranaki,2008,Grassland - With woody biomass,12238.75467983164
+Taranaki,2008,Settlements,6725.68693553647
+Taranaki,2008,Wetland - Open water,2736.05805709482
+Taranaki,2008,Cropland - Annual,1404.40560515278
+Taranaki,2008,Other,989.18410531931
+Taranaki,2008,Wetland - Vegetated non forest,497.56604413136
+Taranaki,2008,Cropland - Perennial,362.46748334390
+Tasman,2008,Natural Forest,606233.92219584707
+Tasman,2008,Grassland - Low producing,122570.32401774905
+Tasman,2008,Planted Forest - Pre-1990,85436.26836881396
+Tasman,2008,Grassland - High producing,66606.56194623546
+Tasman,2008,Grassland - With woody biomass,25698.59146125447
+Tasman,2008,Post 1989 Forest,18029.50394046266
+Tasman,2008,Other,16226.27054203746
+Tasman,2008,Cropland - Perennial,9582.57950876747
+Tasman,2008,Wetland - Open water,8120.76920271856
+Tasman,2008,Settlements,2710.06037215417
+Tasman,2008,Wetland - Vegetated non forest,2301.12202661516
+Tasman,2008,Cropland - Annual,1320.38858471602
+Waikato,2008,Grassland - High producing,971266.80123688710
+Waikato,2008,Natural Forest,630697.90072923932
+Waikato,2008,Grassland - Low producing,342437.08844172691
+Waikato,2008,Planted Forest - Pre-1990,279002.17392953614
+Waikato,2008,Wetland - Open water,83619.42077092401
+Waikato,2008,Post 1989 Forest,44469.85813531965
+Waikato,2008,Grassland - With woody biomass,37600.94005356747
+Waikato,2008,Settlements,22578.14573967224
+Waikato,2008,Cropland - Annual,14109.27431481502
+Waikato,2008,Other,13672.82577670100
+Waikato,2008,Wetland - Vegetated non forest,8227.27137290182
+Waikato,2008,Cropland - Perennial,2320.25455665722
+Wellington,2008,Natural Forest,290914.40336669802
+Wellington,2008,Grassland - Low producing,198520.83281130480
+Wellington,2008,Grassland - High producing,175582.16217767900
+Wellington,2008,Planted Forest - Pre-1990,41367.53982441577
+Wellington,2008,Grassland - With woody biomass,39192.38259555865
+Wellington,2008,Post 1989 Forest,28790.88319733578
+Wellington,2008,Settlements,19798.25399127470
+Wellington,2008,Wetland - Open water,11594.96082232861
+Wellington,2008,Cropland - Annual,2345.48721133932
+Wellington,2008,Other,1761.62455614157
+Wellington,2008,Cropland - Perennial,1716.13828426176
+Wellington,2008,Wetland - Vegetated non forest,1214.61419271995
+West Coast,2008,Natural Forest,1520232.03488269550
+West Coast,2008,Grassland - Low producing,347171.29422311430
+West Coast,2008,Other,161895.50488990013
+West Coast,2008,Grassland - With woody biomass,135436.57893752558
+West Coast,2008,Grassland - High producing,68428.87299639348
+West Coast,2008,Wetland - Open water,39535.35859969931
+West Coast,2008,Planted Forest - Pre-1990,29735.23392545833
+West Coast,2008,Wetland - Vegetated non forest,19825.49349774793
+West Coast,2008,Post 1989 Forest,10620.20740011775
+West Coast,2008,Settlements,2951.15624482947
+West Coast,2008,Cropland - Annual,35.98228973127
+West Coast,2008,Cropland - Perennial,24.47582993133
