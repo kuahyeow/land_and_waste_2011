@@ -9,7 +9,32 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <div class="container">
+<div class="topbar">
+      <div class="topbar-inner">
+        <div class="container">
+          <h3><%= link_to 'NZ<sup>2</sup>'.html_safe, root_path %></h3>
+          <ul class="nav">
+            <li class="<%= 'active' if current_page?(root_path) %>">
+              <%= link_to 'Home', root_url %>
+            </li>
+            <li class="<%= 'active' if current_page?(regions_url) %>">
+              <%= link_to 'Regions', regions_url %>
+            </li>
+            <li class="<%= 'active' if current_page?(land_url) %>">
+              <%= link_to 'Land', land_url %>
+            </li>
+            <li class="<%= 'active' if current_page?(waste_url) %>">
+              <%= link_to 'Waste', waste_url %>
+            </li>
+          </ul>
+          <ul class="nav secondary-nav">
+            <li><a href="#">Sources</a></li>
+          </ul>
+        </div>
+      </div><!-- /topbar-inner -->
+    </div>
+
+  <div id="root_container" class="container">
     <%= yield %>
   </div>
 

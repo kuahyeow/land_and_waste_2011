@@ -24,7 +24,7 @@
         <tr>
           <% expected = ['1998', '2001/02', '2010'] %>
           <td class="name_and_sparkline">
-            <div class="region_short_name" title="<%= region.name %>"><%= region.name %></div>
+            <div class="region_short_name" title="<%= region.name %>"><%= show_region_link region %></div>
             <div id="<%= dom_id(region, 'graph') %>" class="aGraph"></div>
           </td>
           <% tonnages.each do |tonnage| %>
@@ -64,7 +64,7 @@
     <tr>
       <% expected = ['1998', '2001/02', '2010'] %>
       <td class="name_and_sparkline">
-        <div class="region_short_name" title="<%= region.name %>"><%= region.name %></div>
+        <div class="region_short_name" title="<%= region.name %>"><%= show_region_link region %></div>
         <div id="<%= dom_id(region, 'graph_per') %>" class="aGraph"></div>
       </td>
       <% tonnages.each do |tonnage| %>

@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def show_region_link(region)
+    link_to_if region.showable?, region.name, region_path(region)
+  end
+
   def land_use_class(land)
     case land.land_type
     when 'annual cropland'

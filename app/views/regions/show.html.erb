@@ -13,7 +13,9 @@
 <% end %>
 </dl>
 
-<h2>Land</h2>
+<h2>
+  Land
+</h2>
 
 <p>
   <% if @forests.present? %>
@@ -26,7 +28,10 @@
 </p>
 
 <% if @lands.present? %>
-  <p>The most common type of land in <%= @region.name %> are <%= @lands.first.land_type.pluralize %>.</p>
+  <p>The most common type of land in <%= @region.name %> are <%= @lands.first.land_type.pluralize %>.
+  <%= link_to 'More &raquo;'.html_safe, land_url, :class => 'btn primary' %>
+  </p>
+
   <div class="row">
     <table class="span10 column">
       <thead>
@@ -45,6 +50,9 @@
       </tbody>
     </table>
   </div>
+
+  <p>
+  </p>
 <% end %>
 
 
@@ -52,13 +60,16 @@
 <h2>Waste</h2>
 
 <p>
-In <%= @region.tonnages.last.year %>, <%= 'an estimated' if @region.tonnages.last.estimate %>
- <%= number_to_human(@region.tonnages.last.tonnes).downcase %> tonnes of waste was dumped in landfills in the region.
+  In <%= @region.tonnages.last.year %>, <%= 'an estimated' if @region.tonnages.last.estimate %>
+  <%= number_to_human(@region.tonnages.last.tonnes).downcase %> tonnes of waste was dumped in landfills in the region.
+  <%= link_to 'More &raquo;'.html_safe, waste_url, :class => 'btn primary' %>
 </p>
 
+
+<h2>Other sources</h2>
 <% if @regional_council %>
   <p>
-    Much, much more wonderful information and data can be found at <%= link_to 'its wikipedia page', 'http://en.wikipedia.org/wiki/' + @region.name + ' Region' %>
+    Much, much more wonderful information and data can be found at the <%= link_to @region.name + ' Region wikipedia page', 'http://en.wikipedia.org/wiki/' + @region.name + ' Region' %>
   </p>
 <% end %>
 

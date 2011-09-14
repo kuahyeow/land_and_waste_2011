@@ -1,6 +1,6 @@
 class RegionsController < ApplicationController
   def index
-    @regions = Region.where('area is not null').all
+    @regions = Region.showable.all
   end
 
   def show

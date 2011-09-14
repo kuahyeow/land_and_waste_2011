@@ -1,3 +1,8 @@
+#root_container {
+  margin-top: 40px;  /* fix topbar 40px */
+  padding-top: 10px;
+}
+
 /* tell the SVG path to be a thin blue line without any area fill */
 path {
   stroke: steelblue;
