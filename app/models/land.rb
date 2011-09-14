@@ -4,4 +4,5 @@ class Land < ActiveRecord::Base
   YEARS = ['1990', '2008']
 
   scope :forest, where(:land_type => 'Natural Forest')
+  scope :largest, order('hectares desc')
 end

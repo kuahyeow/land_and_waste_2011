@@ -1,27 +1,62 @@
 <h1><%= @region.name %></h1>
 
+<dl>
 <% unless @region.populations.empty? %>
-<p>There were <%= number_with_delimiter @region.populations.last.number %> people living in this region at <%= @region.populations.last.year %>.</p>
+  <dt>Population (<%= @region.populations.last.year %>)</dt>
+  <dd><%= number_with_delimiter(@region.populations.last.number) %></dd>
 <% end %>
+  <dt>Land Area (km2)</dt>
+  <dd><%= number_with_delimiter(@region.area.to_i) %></dd>
+<% if @regional_council %>
+  <dt>Regional council</dt>
+  <dd><%= link_to @regional_council.name, @regional_council.website %></dd>
+<% end %>
+</dl>
+
+<h2>Land</h2>
 
 <p>
-  There were <%= number_with_delimiter @forests.last.hectares.round.to_i %> hectares of <%= @forests.last.land_type %> in <%= @region.name %> as of <%= @forests.last.year %>.
-  <% if @forests.size > 1 %>
-    <% difference = @forests.last.hectares - @forests.first.hectares %>
-    This is <%= number_with_precision(difference.abs, :precision => 0, :delimiter => ',') %> hectares <%= difference < 0 ? 'less' : 'more' %> compared to <%= @forests.first.year %>
+  <% if @forests.present? %>
+    There were <%= number_with_delimiter @forests.last.hectares.round.to_i %> hectares of <%= @forests.last.land_type %> in <%= @region.name %> as of <%= @forests.last.year %>.
+    <% if @forests.size > 1 %>
+      <% difference = @forests.last.hectares - @forests.first.hectares %>
+      This is <%= number_with_precision(difference.abs, :precision => 0, :delimiter => ',') %> hectares <%= difference < 0 ? 'less' : 'more' %> compared to <%= @forests.first.year %>.
+    <% end %>
   <% end %>
 </p>
 
+<% if @lands.present? %>
+  <p>The most common type of land in <%= @region.name %> are <%= @lands.first.land_type.pluralize %>.</p>
+<div class="row">
+  <table class="span10 column">
+    <thead>
+      <tr>
+        <th>Land use type</th>
+        <th class="numeric">%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @lands.each do |land| %>
+        <tr>
+          <td><%= land.land_type %></td>
+          <td class="numeric"><%= number_to_percentage (land.hectares / @region.area), :precision => 1  %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<% end %>
+
+
+
+<h2>Waste</h2>
+
 <p>
 In <%= @region.tonnages.last.year %>, <%= 'an estimated' if @region.tonnages.last.estimate %>
- <%= number_to_human @region.tonnages.last.tonnes %> tonnes of waste was dumped in landfills in the region.
+ <%= number_to_human(@region.tonnages.last.tonnes).downcase %> tonnes of waste was dumped in landfills in the region.
 </p>
 
 <% if @regional_council %>
-  <p>
-    <%= @region.name %> is administered by the <%= @regional_council.name %>.
-  </p>
-
   <p>
     Much, much more wonderful information and data can be found at <%= link_to 'its wikipedia page', 'http://en.wikipedia.org/wiki/' + @region.name + ' Region' %>
   </p>
