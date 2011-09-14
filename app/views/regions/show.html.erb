@@ -27,24 +27,24 @@
 
 <% if @lands.present? %>
   <p>The most common type of land in <%= @region.name %> are <%= @lands.first.land_type.pluralize %>.</p>
-<div class="row">
-  <table class="span10 column">
-    <thead>
-      <tr>
-        <th>Land use type</th>
-        <th class="numeric">%</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @lands.each do |land| %>
+  <div class="row">
+    <table class="span10 column">
+      <thead>
         <tr>
-          <td><%= land.land_type %></td>
-          <td class="numeric"><%= number_to_percentage (land.hectares / @region.area), :precision => 1  %></td>
+          <th>Land use type (<%= @lands.first.year %>)</th>
+          <th class="numeric">% of region</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody>
+        <% @lands.each do |land| %>
+          <tr>
+            <td><%= land.land_type %></td>
+            <td class="numeric"><%= number_to_percentage (land.hectares / @region.area), :precision => 1  %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <% end %>
 
 

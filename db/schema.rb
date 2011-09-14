@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110914103836) do
+ActiveRecord::Schema.define(:version => 20110914114349) do
 
   create_table "councils", :force => true do |t|
     t.string   "name"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20110914103836) do
     t.decimal  "hectares"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "official_land_type"
   end
 
   create_table "populations", :force => true do |t|

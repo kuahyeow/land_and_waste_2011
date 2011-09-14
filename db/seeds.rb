@@ -59,7 +59,7 @@ if reload_population
   end
 end
 
-reload_lands = true
+reload_lands = false
 
 if reload_lands
   Land.delete_all
@@ -67,13 +67,13 @@ if reload_lands
   FasterCSV.foreach(File.join(RAILS_ROOT, 'db/2008_lum.csv'), :headers => true, :header_converters => :symbol) do |data|
     region = Region.find_by_name(data[:lum_reg_n])
     raise "Not found #{data[:lum_reg_n]}" unless region
-    Land.create!(:year => data[:lum_year], :land_type => data[:luc_name], :hectares => data[:sum], :region => region)
+    Land.create!(:year => data[:lum_year], :official_land_type => data[:luc_name], :hectares => data[:sum], :region => region)
   end
 
   FasterCSV.foreach(File.join(RAILS_ROOT, 'db/1990_lum.csv'), :headers => true, :header_converters => :symbol) do |data|
     region = Region.find_by_name(data[:lum_reg_n])
     raise "Not found #{data[:lum_reg_n]}" unless region
-    Land.create!(:year => data[:lum_year], :land_type => data[:luc_name], :hectares => data[:sum], :region => region)
+    Land.create!(:year => data[:lum_year], :official_land_type => data[:luc_name], :hectares => data[:sum], :region => region)
   end
 end
 
