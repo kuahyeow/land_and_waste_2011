@@ -27,6 +27,6 @@ class Tonnage < ActiveRecord::Base
     #   '2008'..'2012'.to_a
     # end
     single_year = year.to_i
-    (single_year-2..single_year+2).to_a
+    (single_year-2..single_year+2).to_a.map(&:to_s)
   end
 end

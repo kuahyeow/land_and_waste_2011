@@ -8,6 +8,6 @@ class RegionsController < ApplicationController
     @regional_council = @region.councils.where(:council_type => ['unitary', 'regional']).first
 
     @forests = @region.lands.forest.order('year').all
-    @lands = @region.lands.where('year = 2008').largest.all
+    @lands = @region.lands.where(:year => '2008').largest.all
   end
 end
