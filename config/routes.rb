@@ -1,7 +1,7 @@
 Recycle::Application.routes.draw do
   devise_for :users
 
-  root :to => "regions#index"
+  root :to => "about#index"
   match '/land', :to => 'land_uses#index', :as => 'land'
   match '/waste', :to => 'waste#index', :as => 'waste'
 
