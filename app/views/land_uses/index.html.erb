@@ -5,10 +5,13 @@
 </p>
 
 <p>
-  Restrict to "All regions" | Restrict to "Forests"
+  <%= label_tag :land_type, :style => 'width: auto;' do %>
+    Show only:&nbsp;
+  <% end %>
+  <%= select_tag :land_type, options_for_select(['All', 'Croplands', 'Forests', 'Grasslands', 'Other', 'Settlements', 'Wetlands'], :include_blank => 'All') %>
 </p>
 
-<table class="zebra-striped">
+<table id="land_use" class="zebra-striped">
   <thead>
   <tr>
     <th>Region</th>
@@ -19,22 +22,39 @@
   </thead>
   <tbody>
   <% @lands.each do |previous_land, land| %>
-    <tr>
+    <tr class="<%= land_use_class(land) %>">
       <td class="">
         <div class="region_short_name" title="<%= land.region.name %>">
           <%= land.region.name %> - <%= land.land_type %>
         </div>
       </td>
       <td class="numeric">
-        <%= number_with_precision(previous_land.hectares, :precision => 0) if previous_land %>
+        <%= number_with_precision(previous_land.hectares, :precision => 0, :delimiter => ',') if previous_land %>
       </td>
       <td class="numeric">
-        <%= number_with_precision(land.hectares, :precision => 0) if land %>
+        <%= number_with_precision(land.hectares, :precision => 0, :delimiter => ',') if land %>
       </td>
       <td class="numeric">
-        <%= number_with_precision(land.hectares - previous_land.hectares, :precision => 0) if previous_land %>
+        <%= number_with_precision(land.hectares - previous_land.hectares, :precision => 0, :delimiter => ',') if previous_land %>
       </td>
     </tr>
   <% end %>
   </tbody>
 </table>
+
+<%= javascript_tag do %>
+  $('#land_type').change(function(){
+    if(this.value == 'All') {
+      $('tr.odd').removeClass('odd');
+      $('#land_use').addClass('zebra-striped');
+      $('tr:hidden').show();
+    } else {
+      $('#land_use').removeClass('zebra-striped');
+      $('tr.odd').removeClass('odd');
+      var selector = 'tbody tr.' + this.value.toLowerCase();
+      $('tbody tr:visible').hide()
+      $(selector).show();
+      $('#land_use tbody tr:visible:even').addClass('odd')
+    }
+  });
+<% end %>

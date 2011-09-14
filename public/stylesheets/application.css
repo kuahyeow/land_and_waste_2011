@@ -15,6 +15,14 @@ path {
   stroke-opacity:.95;
 }
 
+tr.odd td{
+  background-color: #f9f9f9;
+}
+tr.over td{
+  background-color: #f5f5f5;
+}
+
+
 td.numeric {
   text-align: right;
 }
