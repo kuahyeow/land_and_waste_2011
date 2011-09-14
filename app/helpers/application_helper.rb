@@ -23,7 +23,7 @@ module ApplicationHelper
       'settlements'
     when 'water'
       'wetlands'
-    when 'wetland'
+    when 'wetlands'
       'wetlands'
     end
   end
