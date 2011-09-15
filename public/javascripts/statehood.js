@@ -12,9 +12,9 @@ var format = pv.Format.date("%B %e, %Y");
 var map = po.map()
     .container(document.getElementById("map").appendChild(po.svg("svg")))
     .center({lat: -41, lon: 173})
-    .zoomRange([4, 7])
     .zoom(5)
-    .add(po.interact());
+    .zoomRange([5, 5])
+    // .add(po.interact());
 
 map.add(po.image()
     .url(po.url("http://{S}tile.cloudmade.com"
@@ -29,8 +29,8 @@ d3.json("nz_regions.json", function(json) {
 })
 
 
-map.add(po.compass()
-    .pan("none"));
+// map.add(po.compass()
+    // .pan("none"));
 
 map.container().setAttribute("class", "Reds");
 
