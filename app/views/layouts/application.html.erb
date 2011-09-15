@@ -14,8 +14,13 @@
         <div class="container">
           <h3><%= link_to 'Land and Waste'.html_safe, root_path %></h3>
           <ul class="nav">
-            <li class="<%= 'active' if current_page?(regions_path) %>">
-              <%= link_to 'Regions', regions_path %>
+            <li class="dropdown">
+              <%= link_to_function 'Regions', "$(this).parent().toggleClass('open')" %>
+              <ul class="dropdown-menu">
+                <% (@regions || Region.showable.all).each do |region| %>
+                  <li><%= link_to region.name, region_path(region) %></li>
+                <% end %>
+              </ul>
             </li>
             <li class="<%= 'active' if current_page?(land_path) %>">
               <%= link_to 'Land', land_path %>
