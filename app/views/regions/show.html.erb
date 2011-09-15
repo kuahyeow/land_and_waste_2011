@@ -17,24 +17,68 @@
 <% end %>
 </dl>
 
-<h2>Waste per area</h2>
+<h2>Land</h2>
+
+<p>
+  <% if @forests.present? %>
+    There were <%= number_with_delimiter @forests.last.hectares.round.to_i %> hectares of <%= @forests.last.land_type %> in <%= @region.name %> as of <%= @forests.last.year %>.
+    <% if @forests.size > 1 %>
+      <% difference = @forests.last.hectares - @forests.first.hectares %>
+      This is <%= number_with_precision(difference.abs, :precision => 0, :delimiter => ',') %> hectares <%= difference < 0 ? 'less' : 'more' %> compared to <%= @forests.first.year %>.
+    <% end %>
+  <% end %>
+</p>
 
 <% if @lands.present? %>
-  <ul class="pills">
-    <li class="active">
-    <%= link_to_function @region.name, "scale(1); densityInfo(0)" %>
-    </li>
-
-    <% @lands.each do |land| %>
-      <li>
-        <%= link_to_function land.land_type, "scale(#{number_with_precision(land.hectares / @region.area / 100, :precision => 5)}); densityInfo(#{land.id})" %>
-      </li>
-    <% end %>
-  </ul>
+  <p>The most common type of land in <%= @region.name %> are <strong><%= @lands.first.land_type.pluralize %></strong>.
+  <%= link_to 'Compare with other regions &raquo;'.html_safe, land_path, :class => 'btn primary' %>
+  </p>
 
   <div class="row">
-    <div id="map" style="height: 400px;" class="span10 column"></div>
-    <div class="span6 column">
+    <table class="span8 column">
+      <thead>
+        <tr>
+          <th>Land use type (<%= @lands.first.year %>)</th>
+          <th class="numeric">Hectares</th>
+          <th class="numeric">% of region</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <%= link_to_function @region.name, "scale(1); densityInfo(0)" %>
+          </td>
+          <td><%= @region.area %> km2</td>
+          <td></td>
+        <tr>
+        <% @lands.each do |land| %>
+          <tr>
+            <td>
+        <%= link_to_function land.land_type, "scale(#{number_with_precision(land.hectares / @region.area / 100, :precision => 5)}); densityInfo(#{land.id})" %>
+</td>
+            <td class="numeric"><%= number_with_precision(land.hectares, :delimiter => ',', :precision => 1) %></td>
+            <td class="numeric"><%= number_to_percentage (land.hectares / @region.area), :precision => 1  %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div id="map" style="height: 500px;" class="span8 column"></div>
+  </div>
+
+<% else %>
+  <p class="alert-message warning">No land use data available</p>
+<% end %>
+
+
+
+<h2>Waste</h2>
+
+<p>
+  In <%= @tonnage.year %>, <%= 'an estimated' if @tonnage.estimate %>
+  <code><%= number_to_human(@tonnage.tonnes).downcase %> tonnes</code> of waste was dumped in landfills in the region.
+  <%= link_to 'Compare with other regions &raquo;'.html_safe, waste_path, :class => 'btn primary' %>
+</p>
+
       <div class="density-info" id="density-0">
         <p>
         <%= @region.name %> had <code><%= number_with_precision(kg_per_meter(@tonnage.tonnes, @region.area), :precision => 1) %> kgs per meter of land</code> 
@@ -56,10 +100,14 @@
           </p>
         </div>
       <% end %>
-    </div>
-  </div>
-<% else %>
-  <p class="alert-message warning">No land use data available</p>
+
+
+
+<h2>Other sources</h2>
+<% if @regional_council %>
+  <p>
+    Much, much more wonderful information and data can be found at the <%= link_to @region.name + ' Region wikipedia page', 'http://en.wikipedia.org/wiki/' + @region.name + ' Region' %>
+  </p>
 <% end %>
 
 
@@ -72,64 +120,4 @@
   }
 <% end %>
 <%= javascript_include_tag 'density.js' %>
-
-<h2>Land</h2>
-
-<p>
-  <% if @forests.present? %>
-    There were <%= number_with_delimiter @forests.last.hectares.round.to_i %> hectares of <%= @forests.last.land_type %> in <%= @region.name %> as of <%= @forests.last.year %>.
-    <% if @forests.size > 1 %>
-      <% difference = @forests.last.hectares - @forests.first.hectares %>
-      This is <%= number_with_precision(difference.abs, :precision => 0, :delimiter => ',') %> hectares <%= difference < 0 ? 'less' : 'more' %> compared to <%= @forests.first.year %>.
-    <% end %>
-  <% end %>
-</p>
-
-<% if @lands.present? %>
-  <p>The most common type of land in <%= @region.name %> are <strong><%= @lands.first.land_type.pluralize %></strong>.
-  <%= link_to 'Compare with other regions &raquo;'.html_safe, land_path, :class => 'btn primary' %>
-  </p>
-
-  <div class="row">
-    <table class="span10 column">
-      <thead>
-        <tr>
-          <th>Land use type (<%= @lands.first.year %>)</th>
-          <th class="numeric">Hectares</th>
-          <th class="numeric">% of region</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @lands.each do |land| %>
-          <tr>
-            <td><%= land.land_type %></td>
-            <td class="numeric"><%= number_with_precision(land.hectares, :delimiter => ',', :precision => 1) %></td>
-            <td class="numeric"><%= number_to_percentage (land.hectares / @region.area), :precision => 1  %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-
-<% else %>
-  <p class="alert-message warning">No land use data available</p>
-<% end %>
-
-
-
-<h2>Waste</h2>
-
-<p>
-  In <%= @tonnage.year %>, <%= 'an estimated' if @tonnage.estimate %>
-  <code><%= number_to_human(@tonnage.tonnes).downcase %> tonnes</code> of waste was dumped in landfills in the region.
-  <%= link_to 'Compare with other regions &raquo;'.html_safe, waste_path, :class => 'btn primary' %>
-</p>
-
-
-<h2>Other sources</h2>
-<% if @regional_council %>
-  <p>
-    Much, much more wonderful information and data can be found at the <%= link_to @region.name + ' Region wikipedia page', 'http://en.wikipedia.org/wiki/' + @region.name + ' Region' %>
-  </p>
-<% end %>
 
