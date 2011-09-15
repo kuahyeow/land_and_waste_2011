@@ -17,7 +17,12 @@ path {
 }
 .layer path.active{
   stroke: black;
+  stroke-width: 2;
+}
+.layer path.inactive{
+  stroke: gray;
   stroke-opacity:.95;
+  stroke-width: 1;
 }
 
 tr.odd td{

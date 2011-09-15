@@ -13,9 +13,29 @@
 <% end %>
 </dl>
 
-<h2>
-  Land
-</h2>
+<div id="map" style="height: 400px;"></div>
+
+<p>
+  <%= number_with_precision(@tonnage.tonnes / @region.area) %> tonnes per 1 km<sup>2</sup> of <%= link_to_function 'total region area', "scale(1)" %>
+  </p>
+<% @lands.each do |land| %>
+  <p>
+  <%= number_with_precision(@tonnage.tonnes / land.hectares * 100) %> tonnes per 1 km<sup>2</sup> of <%= link_to_function land.land_type, "scale(#{number_with_precision(land.hectares / @region.area / 100, :precision => 5)})" %>
+  </p>
+<% end %>
+<p>1 km<sup>2</sup> = 100 hectares</p>
+
+<%= javascript_tag do %>
+  var tonnage = <%= raw @tonnage.to_polymaps_json %>;
+
+  var tonnes = {}
+  for (var t in tonnage) {
+    tonnes[regc[t]] = tonnage[t];
+  }
+<% end %>
+<%= javascript_include_tag 'density.js' %>
+
+<h2>Land</h2>
 
 <p>
   <% if @forests.present? %>
@@ -29,7 +49,7 @@
 
 <% if @lands.present? %>
   <p>The most common type of land in <%= @region.name %> are <%= @lands.first.land_type.pluralize %>.
-  <%= link_to 'More &raquo;'.html_safe, land_url, :class => 'btn primary' %>
+  <%= link_to 'Compare with other regions &raquo;'.html_safe, land_url, :class => 'btn primary' %>
   </p>
 
   <div class="row">
@@ -37,6 +57,7 @@
       <thead>
         <tr>
           <th>Land use type (<%= @lands.first.year %>)</th>
+          <th class="numeric">Hectares</th>
           <th class="numeric">% of region</th>
         </tr>
       </thead>
@@ -44,6 +65,7 @@
         <% @lands.each do |land| %>
           <tr>
             <td><%= land.land_type %></td>
+            <td class="numeric"><%= number_with_precision(land.hectares, :delimiter => ',', :precision => 1) %></td>
             <td class="numeric"><%= number_to_percentage (land.hectares / @region.area), :precision => 1  %></td>
           </tr>
         <% end %>
@@ -51,8 +73,8 @@
     </table>
   </div>
 
-  <p>
-  </p>
+<% else %>
+  <p class="alert-message warning">No land use data available</p>
 <% end %>
 
 
@@ -60,9 +82,9 @@
 <h2>Waste</h2>
 
 <p>
-  In <%= @region.tonnages.last.year %>, <%= 'an estimated' if @region.tonnages.last.estimate %>
-  <%= number_to_human(@region.tonnages.last.tonnes).downcase %> tonnes of waste was dumped in landfills in the region.
-  <%= link_to 'More &raquo;'.html_safe, waste_url, :class => 'btn primary' %>
+  In <%= @tonnage.year %>, <%= 'an estimated' if @tonnage.estimate %>
+  <%= number_to_human(@tonnage.tonnes).downcase %> tonnes of waste was dumped in landfills in the region.
+  <%= link_to 'Compare with other regions &raquo;'.html_safe, waste_url, :class => 'btn primary' %>
 </p>
 
 

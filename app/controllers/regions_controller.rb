@@ -9,5 +9,6 @@ class RegionsController < ApplicationController
 
     @forests = @region.lands.forest.order('year').all
     @lands = @region.lands.where(:year => '2008').largest.all
+    @tonnage = @region.tonnages.last
   end
 end

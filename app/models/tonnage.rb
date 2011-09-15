@@ -16,6 +16,10 @@ class Tonnage < ActiveRecord::Base
     where(:year => year).all.inject(Hash.new){|hash, t| hash[t.region.name] = t.tonnes; hash}.to_json
   end
 
+  def to_polymaps_json
+    {region.name => tonnes}.to_json
+  end
+
   protected
   def year_range
     # case year
