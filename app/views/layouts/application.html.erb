@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Regions of New Zealand - A Geographic Story</title>
+  <title>New Zealand Land and Waste</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
-  <%= javascript_include_tag 'fips', 'd3/d3.min.js', 'protovis/protodata.js', 'polymaps.min.js' %>
+  <%= javascript_include_tag 'fips', 'd3/d3.min.js', 'd3/d3.geo.min.js', 'd3/d3.geom.min.js', 'protovis/protodata.js', 'polymaps.min.js' %>
 
   <%= csrf_meta_tag %>
 </head>
@@ -12,11 +12,8 @@
 <div class="topbar">
       <div class="topbar-inner">
         <div class="container">
-          <h3><%= link_to 'NZ<sup>2</sup>'.html_safe, root_path %></h3>
+          <h3><%= link_to 'NZ-LW'.html_safe, root_path %></h3>
           <ul class="nav">
-            <li class="<%= 'active' if current_page?(root_path) %>">
-              <%= link_to 'Home', root_url %>
-            </li>
             <li class="<%= 'active' if current_page?(regions_url) %>">
               <%= link_to 'Regions', regions_url %>
             </li>
