@@ -12,7 +12,7 @@ var format = pv.Format.date("%B %e, %Y");
 var map = po.map()
     .container(document.getElementById("map").appendChild(po.svg("svg")))
     .center({lat: -41, lon: 173})
-    .zoomRange([3, 7])
+    .zoomRange([4, 7])
     .zoom(5)
     .add(po.interact());
 
