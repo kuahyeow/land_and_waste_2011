@@ -86,13 +86,14 @@ function getPathArea( segList )
 }
 
 // All hail Zachary Forest Johnson of indiemaps.com http://indiemaps.com/blog/2011/02/noncontiguous-cartograms-in-openlayers-and-polymaps/
+// Adapted and Used with permission from Zachary Forest Johnson
 function scale(ratio) {
   if (ratio < 0.05) {
     map.zoom(original_zoom + 1);
   } else {
     map.zoom(original_zoom);
   }
-  var ee = d3.select('.active')
+  var ee = d3.select('path.active');
 
   // now let's loop through again and scale em!
   for (var i = 0; i < ee.length; i++) {
@@ -120,6 +121,9 @@ function scale(ratio) {
   }
 }
 
-
+function densityInfo(id) {
+  $('.density-info').hide();
+  $('#density-' + id).show();
+}
 
 

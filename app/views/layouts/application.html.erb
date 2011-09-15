@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>New Zealand Land and Waste</title>
+  <title>Land and Waste New Zealand</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= javascript_include_tag 'fips', 'd3/d3.min.js', 'd3/d3.geo.min.js', 'd3/d3.geom.min.js', 'protovis/protodata.js', 'polymaps.min.js' %>
@@ -12,7 +12,7 @@
 <div class="topbar">
       <div class="topbar-inner">
         <div class="container">
-          <h3><%= link_to 'NZ-LW'.html_safe, root_path %></h3>
+          <h3><%= link_to 'Land and Waste'.html_safe, root_path %></h3>
           <ul class="nav">
             <li class="<%= 'active' if current_page?(regions_path) %>">
               <%= link_to 'Regions', regions_path %>

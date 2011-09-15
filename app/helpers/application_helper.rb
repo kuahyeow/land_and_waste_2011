@@ -3,6 +3,20 @@ module ApplicationHelper
     link_to_if region.showable?, region.name, region_path(region)
   end
 
+  def rubbish_phrase(density)
+    if density > 100
+      'If we pack in the rubbish in'
+    elsif density > 20
+      'If landfill rubbish was placed equally across'
+    else
+      'If we spread landfill rubbish equally across'
+    end
+  end
+
+  def kg_per_meter(tonnes, sq_kms)
+    (tonnes * 1000)/ (sq_kms * 1000000)
+  end
+
   def land_use_class(land)
     case land.land_type
     when 'annual cropland'

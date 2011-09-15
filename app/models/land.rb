@@ -8,6 +8,12 @@ class Land < ActiveRecord::Base
   scope :forest, where(:land_type => 'Natural Forest')
   scope :largest, order('hectares desc')
 
+
+  def square_kms
+    hectares / 100
+  end
+
+
   protected
   def fill_in_land_type
     self.land_type ||= land_use_class

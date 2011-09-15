@@ -7,6 +7,10 @@
 <% end %>
   <dt>Land Area (km2)</dt>
   <dd><%= number_with_delimiter(@region.area.to_i) %></dd>
+<% if @tonnage %>
+  <dt><%= @tonnage.year %> landfill (tonnes):</dt>
+  <dd><%= number_with_delimiter @tonnage.tonnes %></dd>
+<% end %>
 <% if @regional_council %>
   <dt>Regional council</dt>
   <dd><%= link_to @regional_council.name, @regional_council.website %></dd>
@@ -14,20 +18,49 @@
 </dl>
 
 <h2>Waste per area</h2>
-<div class="row">
-  <div id="map" style="height: 400px;" class="span10 column"></div>
-  <div class="span6 column">
-    <p>
-      <%= number_with_precision(@tonnage.tonnes / @region.area, :delimiter => ',') %> tonnes per 1 km<sup>2</sup> of <%= link_to_function 'total region area', "scale(1)" %>
-    </p>
+
+<% if @lands.present? %>
+  <ul class="pills">
+    <li class="active">
+    <%= link_to_function @region.name, "scale(1); densityInfo(0)" %>
+    </li>
+
     <% @lands.each do |land| %>
-      <p>
-      <%= number_with_precision(@tonnage.tonnes / land.hectares * 100, :delimiter => ',') %> tonnes per 1 km<sup>2</sup> of <%= link_to_function land.land_type, "scale(#{number_with_precision(land.hectares / @region.area / 100, :precision => 5)})" %>
-      </p>
+      <li>
+        <%= link_to_function land.land_type, "scale(#{number_with_precision(land.hectares / @region.area / 100, :precision => 5)}); densityInfo(#{land.id})" %>
+      </li>
     <% end %>
-    <p>1 km<sup>2</sup> = 100 hectares</p>
+  </ul>
+
+  <div class="row">
+    <div id="map" style="height: 400px;" class="span10 column"></div>
+    <div class="span6 column">
+      <div class="density-info" id="density-0">
+        <p>
+        <%= @region.name %> had <code><%= number_with_precision(kg_per_meter(@tonnage.tonnes, @region.area), :precision => 1) %> kgs per meter of land</code> 
+        in the year <%= @tonnage.year %>
+        </p>
+        <p>
+        Alternatively, that's <%= number_with_precision(@tonnage.tonnes / @region.area, :delimiter => ',', :precision => 0) %> tonnes per 1 km<sup>2</sup> of <%= 'total region area' %>
+        </p>
+      </div>
+      <% @lands.each do |land| %>
+        <% density = kg_per_meter(@tonnage.tonnes, land.square_kms) %>
+        <div class="density-info" id="density-<%=land.id%>" style="display:none">
+          <p>
+          <%= rubbish_phrase(density) %> the <%= land.land_type.pluralize %> of the region,
+          we would find <code>a <%= number_with_precision(density, :precision => 1) %> kg block of rubbish every meter</code>.
+          </p>
+          <p>
+          Alternatively, that's <%= number_with_precision(@tonnage.tonnes / land.hectares * 100, :delimiter => ',', :precision => 0) %> tonnes per 1 km<sup>2</sup> 
+          </p>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
+<% else %>
+  <p class="alert-message warning">No land use data available</p>
+<% end %>
 
 
 <%= javascript_tag do %>
@@ -88,7 +121,7 @@
 
 <p>
   In <%= @tonnage.year %>, <%= 'an estimated' if @tonnage.estimate %>
-  <%= number_to_human(@tonnage.tonnes).downcase %> tonnes of waste was dumped in landfills in the region.
+  <code><%= number_to_human(@tonnage.tonnes).downcase %> tonnes</code> of waste was dumped in landfills in the region.
   <%= link_to 'Compare with other regions &raquo;'.html_safe, waste_path, :class => 'btn primary' %>
 </p>
 

@@ -7,6 +7,11 @@ $(function(){
       goToCouncilPage($(this).val());
     }
   });
+
+  $('ul.pills li').click(function() {
+    $(this).siblings('li').removeClass('active');
+    $(this).addClass('active');
+  })
 });
 
 
