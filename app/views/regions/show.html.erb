@@ -54,7 +54,7 @@
 
 <% if @lands.present? %>
   <p>The most common type of land in <%= @region.name %> are <strong><%= @lands.first.land_type.pluralize %></strong>.
-  <%= link_to 'Compare with other regions &raquo;'.html_safe, land_url, :class => 'btn primary' %>
+  <%= link_to 'Compare with other regions &raquo;'.html_safe, land_path, :class => 'btn primary' %>
   </p>
 
   <div class="row">
@@ -89,7 +89,7 @@
 <p>
   In <%= @tonnage.year %>, <%= 'an estimated' if @tonnage.estimate %>
   <%= number_to_human(@tonnage.tonnes).downcase %> tonnes of waste was dumped in landfills in the region.
-  <%= link_to 'Compare with other regions &raquo;'.html_safe, waste_url, :class => 'btn primary' %>
+  <%= link_to 'Compare with other regions &raquo;'.html_safe, waste_path, :class => 'btn primary' %>
 </p>
 
 
