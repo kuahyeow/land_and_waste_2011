@@ -56,7 +56,7 @@ function load(e) {
     } else {
       feature.element.setAttribute("class", "active feature q" + quantile(d) + "-" + 9);
       feature.element.appendChild(po.svg("title").appendChild(
-          document.createTextNode(feature.data.properties.name + ": " + d))
+          document.createTextNode(feature.data.properties.name + ": " + d + " tonnes"))
           .parentNode);
       active_centroid = centroids["" + feature.data.id + ""];
     }

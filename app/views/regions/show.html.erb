@@ -13,17 +13,22 @@
 <% end %>
 </dl>
 
-<div id="map" style="height: 400px;"></div>
+<h2>Waste per area</h2>
+<div class="row">
+  <div id="map" style="height: 400px;" class="span10 column"></div>
+  <div class="span6 column">
+    <p>
+      <%= number_with_precision(@tonnage.tonnes / @region.area, :delimiter => ',') %> tonnes per 1 km<sup>2</sup> of <%= link_to_function 'total region area', "scale(1)" %>
+    </p>
+    <% @lands.each do |land| %>
+      <p>
+      <%= number_with_precision(@tonnage.tonnes / land.hectares * 100, :delimiter => ',') %> tonnes per 1 km<sup>2</sup> of <%= link_to_function land.land_type, "scale(#{number_with_precision(land.hectares / @region.area / 100, :precision => 5)})" %>
+      </p>
+    <% end %>
+    <p>1 km<sup>2</sup> = 100 hectares</p>
+  </div>
+</div>
 
-<p>
-  <%= number_with_precision(@tonnage.tonnes / @region.area) %> tonnes per 1 km<sup>2</sup> of <%= link_to_function 'total region area', "scale(1)" %>
-  </p>
-<% @lands.each do |land| %>
-  <p>
-  <%= number_with_precision(@tonnage.tonnes / land.hectares * 100) %> tonnes per 1 km<sup>2</sup> of <%= link_to_function land.land_type, "scale(#{number_with_precision(land.hectares / @region.area / 100, :precision => 5)})" %>
-  </p>
-<% end %>
-<p>1 km<sup>2</sup> = 100 hectares</p>
 
 <%= javascript_tag do %>
   var tonnage = <%= raw @tonnage.to_polymaps_json %>;
@@ -48,7 +53,7 @@
 </p>
 
 <% if @lands.present? %>
-  <p>The most common type of land in <%= @region.name %> are <%= @lands.first.land_type.pluralize %>.
+  <p>The most common type of land in <%= @region.name %> are <strong><%= @lands.first.land_type.pluralize %></strong>.
   <%= link_to 'Compare with other regions &raquo;'.html_safe, land_url, :class => 'btn primary' %>
   </p>
 

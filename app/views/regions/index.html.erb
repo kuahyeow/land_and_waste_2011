@@ -1,4 +1,8 @@
-<h1>Regions of New Zealand</h1>
+<h1>NZ-LW</h1>
+
+<h2>Mapping New Zealand's Land and Waste</h2>
+
+<p>Please select a region to begin</p>
 
 <% @regions.each do |region| %>
   <p><%= link_to region.name, region_path(region) %></p>
