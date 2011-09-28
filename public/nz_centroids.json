@@ -1,0 +1,35 @@
+{"type":"FeatureCollection","features":[
+  {"type":"Feature","id":"01","properties":{"zoom": 6, "name":"Northland"},"geometry": {"type":"Point","coordinates":[173.740876536437924,-35.341423802322716]}
+  },
+  {"type":"Feature","id":"02","properties":{"zoom": 7, "name":"Auckland"},"geometry": {"type":"Point","coordinates":[174.872708010421064,-36.52777045139257]}
+  },
+  {"type":"Feature","id":"03","properties":{"zoom": 7, "name":"Waikato"},"geometry": {"type":"Point","coordinates":[175.437855263111373,-37.816442382345954]}
+  },
+  {"type":"Feature","id":"04","properties":{"zoom": 7, "name":"Bay of Plenty"},"geometry": {"type":"Point","coordinates":[176.863036596187186,-37.897222922809718]}
+  },
+  {"type":"Feature","id":"05","properties":{"zoom": 7, "name":"Gisborne"},"geometry": {"type":"Point","coordinates":[178.113128431593395,-38.218822140503192]}
+  },
+  {"type":"Feature","id":"06","properties":{"zoom": 7, "name":"Hawkes Bay"},"geometry": {"type":"Point","coordinates":[176.963838241733953,-39.441354368235636]}
+  },
+  {"type":"Feature","id":"07","properties":{"zoom": 7, "name":"Taranaki"},"geometry": {"type":"Point","coordinates":[174.278617233275867,-39.346500941098334]}
+  },
+  {"type":"Feature","id":"08","properties":{"zoom": 6, "name":"Manawatu-Wanganui"},"geometry": {"type":"Point","coordinates":[175.556443686805522,-39.826990528125094]}
+  },
+  {"type":"Feature","id":"09","properties":{"zoom": 7, "name":"Wellington"},"geometry": {"type":"Point","coordinates":[175.41689940780887,-41.178268038305639]}
+  },
+  {"type":"Feature","id":"10","properties":{"zoom": 6, "name":"West Coast"},"geometry": {"type":"Point","coordinates":[170.691032870681596,-42.748101406845002]}
+  },
+  {"type":"Feature","id":"11","properties":{"zoom": 6, "name":"Canterbury"},"geometry": {"type":"Point","coordinates":[171.79721929463102,-43.573491022195924]}
+  },
+  {"type":"Feature","id":"12","properties":{"zoom": 6, "name":"Otago"},"geometry": {"type":"Point","coordinates":[169.696796487830142,-45.385748051808292]}
+  },
+  {"type":"Feature","id":"13","properties":{"zoom": 6, "name":"Southland"},"geometry": {"type":"Point","coordinates":[167.746888301856785,-45.990930383895865]}
+  },
+  {"type":"Feature","id":"14","properties":{"zoom": 7, "name":"Tasman"},"geometry": {"type":"Point","coordinates":[172.725450528302758,-41.175680695278764]}
+  },
+  {"type":"Feature","id":"15","properties":{"zoom": 8, "name":"Nelson"},"geometry": {"type":"Point","coordinates":[173.396402193648839,-41.113365668608949]}
+  },
+  {"type":"Feature","id":"16","properties":{"zoom": 7, "name":"Marlborough"},"geometry": {"type":"Point","coordinates":[173.77571557220864,-41.467957886547914]}
+  }
+]}
+

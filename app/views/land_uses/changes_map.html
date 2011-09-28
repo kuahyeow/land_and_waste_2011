@@ -1,0 +1,32 @@
+<div id='ts-embed-1317204312827-script'><script src='http://tiles.mapbox.com/kuahyeow/api/v1/embed.js?api=mm&amp;size%5B%5D=940&amp;size%5B%5D=500&amp;center%5B%5D=175.34835815429733&amp;center%5B%5D=-40.91143695415618&amp;center%5B%5D=6&amp;layers%5B%5D=kuahyeow.nz-regions-land-changes&amp;layers%5B%5D=mapbox.blue-marble-topo-bathy-jan&amp;layers%5B%5D=kuahyeow.nz-land-changes-only&amp;layers%5B%5D=mapbox.world-borders-light&amp;options%5B%5D=legend&amp;options%5B%5D=zoompan&amp;options%5B%5D=tooltips&amp;options%5B%5D=zoomwheel&amp;options%5B%5D=bwdetect&amp;options%5B%5D=zoombox&amp;options%5B%5D=attribution&amp;el=ts-embed-1317204312827'></script></div>
+
+<script>
+  var el = "ts-embed-1317204312827";
+  var mm = com.modestmaps;
+
+  d3.json("/nz_centroids.json", function(json) {
+    $.each(json.features, function(index, feature){
+      var region_center = new mm.Location(feature.geometry.coordinates[1], feature.geometry.coordinates[0]);
+      selector = "#region_selector a:contains('" + feature.properties.name + "')"
+      $(selector).click(function(){
+        tsEmbed.maps[el].setCenterZoom(region_center, feature.properties.zoom + 2);
+      })
+    })
+  });
+
+</script>
+
+<ul class="pills" id="region_selector">
+  <% @regions.each do |region| %>
+    <%= content_tag :li do %>
+      <%= link_to_function region.name, ''  %>
+    <% end %>
+  <% end %>
+</ul>
+
+
+<p class="alert-message info">
+  Please select a region
+</p>
+
+

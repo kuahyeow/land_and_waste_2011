@@ -4,4 +4,8 @@ class LandUsesController < ApplicationController
       pair.size == 2 ? pair : [nil, pair].flatten
     end
   end
+
+  def changes_map
+    @regions = Region.showable.all
+  end
 end

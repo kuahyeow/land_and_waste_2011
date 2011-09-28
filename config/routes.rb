@@ -3,8 +3,8 @@ Recycle::Application.routes.draw do
 
   root :to => "regions#index"
   match '/about', :to => 'about#index', :as => 'about'
-  match '/land', :to => 'land_uses#index', :as => 'land'
   match '/waste', :to => 'waste#index', :as => 'waste'
+  match '/land(/:action)', :to => 'land_uses', :as => 'land'
 
   resources :regions, :only => [:index, :show]
   resources :councils, :only => [:index, :show]
