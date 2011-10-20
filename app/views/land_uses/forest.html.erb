@@ -1,0 +1,101 @@
+<h1>How much is forest?</h1>
+
+<h3>Forest area by region and year</h3>
+<div class="row">
+  <div class="span8 columns">
+    <p>2010 natural forest area by region. The darker an area is, the higher the proportion of forest area.
+    </p>
+    <div id="map" style="height: 600px;"></div>
+  </div>
+  <div class="span8 columns">
+    <p>
+      This table shows the amount of waste sent to landfills within that region for the given year.
+      <em>Italic</em> figures denote estimates
+    </p>
+    <table class="zebra-striped">
+      <thead>
+      <tr>
+        <th>Region</th>
+        <th class="numeric">1990 (sq kms)</th>
+        <th class="numeric">2008 (sq kms)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @region_lands.each do |region, lands| %>
+        <tr>
+          <% expected = Land::YEARS.dup %>
+          <td class="name_and_sparkline">
+            <div class="region_short_name" title="<%= region.name %>"><%= show_region_link region %></div>
+            <div id="<%= dom_id(region, 'graph') %>" class="aGraph"></div>
+          </td>
+          <% lands.each do |land| %>
+            <% while (expects = expected.shift) && (expects != land.year) %>
+              <td class="numeric">-</td>
+            <% end %>
+            <td class="numeric <%= 'estimate' if land.respond_to?(:estimate) && land.estimate %>"> <%= number_with_precision(land.square_kms, :delimiter => ',', :precision => 2) || '-' %> 
+          <% end %>
+          <% expected.each do %>
+            <%= content_tag(:td, '-', :class => 'numeric') %>
+          <% end %>
+          <% if lands.size == Land::YEARS.size %>
+            <script>
+              drawSparkLine("<%= dom_id(region, 'graph') %>", <%= lands.map(&:square_kms).map(&:to_f).to_json %>);
+            </script>
+          <% end %>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Natural Forests per total region area</h3>
+<p>This table shows the amount of waste per capita sent to landfills within that region for the given year.
+      <em>Italic</em> figures denote estimates
+</p>
+<table class="zebra-striped">
+  <thead>
+  <tr>
+    <th>Region</th>
+    <th class="numeric">1998 (%)</th>
+    <th class="numeric">2001/02 (%)</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @region_lands.each do |region, lands| %>
+    <tr>
+      <% expected = Land::YEARS.dup %>
+      <td class="name_and_sparkline">
+        <div class="region_short_name" title="<%= region.name %>"><%= show_region_link region %></div>
+        <div id="<%= dom_id(region, 'graph_per') %>" class="aGraph"></div>
+      </td>
+      <% lands.each do |land| %>
+        <% while (expects = expected.shift) && (expects != land.year) %>
+          <td class="numeric">-</td>
+        <% end %>
+        <td class="numeric <%= 'estimate' if land.respond_to?(:estimate) && land.estimate %>">
+          <%= number_with_precision(land.per_region_area.try(:*, 100), :precision => 2) || '-' %></td>
+      <% end %>
+      <% expected.each do %>
+        <%= content_tag(:td, '-', :class => 'numeric') %>
+      <% end %>
+      <% if lands.size == Land::YEARS.size %>
+        <script>
+          drawSparkLine("<%= dom_id(region, 'graph_per') %>", <%= lands.map(&:per_region_area).map(&:to_f).to_json %>);
+        </script>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= javascript_tag do %>
+  var tonnage = <%= raw Land.forest.year_json('2008') %>;
+
+  var tonnes = {}
+  for (var t in tonnage) {
+    tonnes[regc[t]] = tonnage[t];
+  }
+  var preferredColor = "YlGn";
+<% end %>
+<%= javascript_include_tag 'statehood.js' %>

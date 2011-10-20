@@ -5,14 +5,21 @@ class Land < ActiveRecord::Base
 
   YEARS = ['1990', '2008']
 
-  scope :forest, where(:land_type => 'Natural Forest')
+  scope :forest, where(:land_type => 'natural forest')
   scope :largest, order('hectares desc')
 
 
   def square_kms
-    hectares / 100
+    @square_kms ||= hectares.to_f / 100
   end
 
+  def per_region_area
+    square_kms / region.area if region.area
+  end
+
+  def self.year_json(year)
+    where(:year => year).all.inject(Hash.new){|hash, t| hash[t.region.name] = t.per_region_area; hash}.to_json
+  end
 
   protected
   def fill_in_land_type
