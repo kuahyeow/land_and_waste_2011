@@ -22,7 +22,7 @@ map.add(po.image()
     + "/20760/256/{Z}/{X}/{Y}.png")
     .hosts(["a.", "b.", "c.", ""])));
 
-d3.json("nz_regions.json", function(json) {
+d3.json("/nz_regions.json", function(json) {
   map.add(po.geoJson()
       .features(json.features)
       .on("load", load))
@@ -32,7 +32,12 @@ d3.json("nz_regions.json", function(json) {
 // map.add(po.compass()
     // .pan("none"));
 
-map.container().setAttribute("class", "Reds");
+if (typeof preferredColor == 'undefined') {
+  var color = "Reds";
+} else {
+  var color = preferredColor;
+}
+map.container().setAttribute("class", color);
 
 function load(e) {
   for (var i = 0; i < e.features.length; i++) {

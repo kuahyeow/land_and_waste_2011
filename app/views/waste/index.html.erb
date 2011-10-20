@@ -24,7 +24,7 @@
       <tbody>
       <% @region_tonnage.each do |region, tonnages| %>
         <tr>
-          <% expected = ['1998', '2001/02', '2010'] %>
+          <% expected = Tonnage::YEARS.dup %>
           <td class="name_and_sparkline">
             <div class="region_short_name" title="<%= region.name %>"><%= show_region_link region %></div>
             <div id="<%= dom_id(region, 'graph') %>" class="aGraph"></div>
@@ -33,12 +33,12 @@
             <% while (expects = expected.shift) && (expects != tonnage.year) %>
               <td class="numeric">-</td>
             <% end %>
-            <td class="numeric <%= 'estimate' if tonnage.estimate %>"> <%= number_with_delimiter(tonnage.tonnes) || '-' %> <%#= "(#{tonnage.year})" %></td>
+            <td class="numeric <%= 'estimate' if tonnage.respond_to?(:estimate) && tonnage.estimate %>"> <%= number_with_delimiter(tonnage.tonnes) || '-' %> <%#= "(#{tonnage.year})" %></td>
           <% end %>
           <% expected.each do %>
             <%= content_tag(:td, '-', :class => 'numeric') %>
           <% end %>
-          <% if tonnages.size == 3 %>
+          <% if tonnages.size == Tonnage::YEARS.size %>
             <script>
               drawSparkLine("<%= dom_id(region, 'graph') %>", <%= tonnages.map(&:tonnes).to_json %>);
             </script>
@@ -66,7 +66,7 @@
   <tbody>
   <% @region_tonnage.each do |region, tonnages| %>
     <tr>
-      <% expected = ['1998', '2001/02', '2010'] %>
+      <% expected = Tonnage::YEARS.dup %>
       <td class="name_and_sparkline">
         <div class="region_short_name" title="<%= region.name %>"><%= show_region_link region %></div>
         <div id="<%= dom_id(region, 'graph_per') %>" class="aGraph"></div>
@@ -81,7 +81,7 @@
       <% expected.each do %>
         <%= content_tag(:td, '-', :class => 'numeric') %>
       <% end %>
-      <% if tonnages.size == 3 %>
+      <% if tonnages.size == Tonnage::YEARS.size %>
         <script>
           drawSparkLine("<%= dom_id(region, 'graph_per') %>", <%= tonnages.map(&:per_capita).to_json %>);
         </script>
