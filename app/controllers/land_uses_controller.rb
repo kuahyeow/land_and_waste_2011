@@ -6,8 +6,9 @@ class LandUsesController < ApplicationController
   end
 
   def forest
-    @region_tonnage = Tonnage.order(:year).all(:include => :region).group_by(&:region)
-    @region_lands = Land.where('land_type = ?', 'natural forest').order(:year).all(:include => :region).group_by(&:region)
+    @land_type = 'Natural forest'
+    @short_type = @land_type.split(/\s/).last
+    @region_lands = Land.where('land_type = ?', @land_type.downcase).order(:year).all(:include => :region).group_by(&:region)
   end
 
   def changes_map

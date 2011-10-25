@@ -1,14 +1,14 @@
-<h1>How much forest is there?</h1>
+<h1>How much <%= @land_type.downcase %> is there?</h1>
 
-<h3>Natural Forest area by region and year</h3>
+<h3><%= @land_type %> area by region and year</h3>
 <div class="row">
   <div class="span8 columns">
-    <p>2010 natural forest area by region. The darker an area is, the higher the proportion of forest area in that region.
+    <p>2010 <%= @land_type %> area by region. The darker an area is, the higher the proportion of <%= @short_type %> area in that region.
     </p>
     <div id="map" style="height: 600px;"></div>
   </div>
   <div class="span8 columns">
-    <p>This table shows the proportion of forest area compared to the  total region area for the given year.
+    <p>This table shows the proportion of <%= @short_type %> area compared to the  total region area for the given year.
     </p>
     <table class="zebra-striped">
       <thead>
@@ -49,9 +49,9 @@
   </div>
 </div>
 
-<h3>Natural forest area</h3>
+<h3><%= @land_type %> area</h3>
 <p>
-  This table shows the area of natural forest within that region for the given year.
+  This table shows the area of <%= @land_type %> within that region for the given year.
 </p>
 <table class="zebra-striped">
   <thead>
@@ -91,7 +91,7 @@
 
 
 <%= javascript_tag do %>
-  var tonnage = <%= raw Land.forest.year_json('2008') %>;
+  var tonnage = <%= raw Land.where('land_type = ?', @land_type.downcase).year_json('2008') %>;
 
   var tonnes = {}
   for (var t in tonnage) {
