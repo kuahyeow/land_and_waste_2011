@@ -5,9 +5,10 @@ class LandUsesController < ApplicationController
     end
   end
 
-  def forest
-    @land_type = 'Natural forest'
+  def land_type
+    @land_type = (params[:land_type] || 'Natural forest').humanize
     @short_type = @land_type.split(/\s/).last
+    render(:text => 'Land type not found', :status => :not_found) and return if Land.where('land_type = ?', @land_type.downcase).count == 0
     @region_lands = Land.where('land_type = ?', @land_type.downcase).order(:year).all(:include => :region).group_by(&:region)
   end
 

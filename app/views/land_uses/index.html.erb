@@ -38,7 +38,7 @@
     <tr class="<%= land_use_class(land) %>">
       <td class="">
         <div class="region_short_name" title="<%= land.region.name %>">
-          <%= show_region_link land.region %> - <%= land.land_type %>
+          <%= show_region_link land.region %> - <%= link_to land.land_type, land_type_path(land.land_type.parameterize('_')) %>
         </div>
       </td>
       <td class="numeric">

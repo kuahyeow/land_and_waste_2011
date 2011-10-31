@@ -4,6 +4,7 @@ Recycle::Application.routes.draw do
   root :to => "regions#index"
   match '/about', :to => 'about#index', :as => 'about'
   match '/waste', :to => 'waste#index', :as => 'waste'
+  match '/land/:land_type', :to => 'land_uses#land_type', :as => 'land_type'
   match '/land(/:action)', :to => 'land_uses', :as => 'land'
 
   resources :regions, :only => [:index, :show]
