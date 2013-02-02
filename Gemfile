@@ -7,9 +7,11 @@ gem 'rails', '3.2.11'
 
 gem "jquery-rails"
 
-gem 'sqlite3'
+gem 'pg'          # Heroku
+gem 'sqlite3'     # local
 
 gem 'fastercsv'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
